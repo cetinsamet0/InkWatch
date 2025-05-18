@@ -47,12 +47,12 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button1.Image = Properties.Resources.icons8_login;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.ImageAlign = ContentAlignment.MiddleRight;
             button1.Location = new Point(166, 276);
             button1.Name = "button1";
             button1.Size = new Size(253, 58);
-            button1.TabIndex = 0;
+            button1.TabIndex = 3;
             button1.Text = "Giriş Yap";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = true;
@@ -64,6 +64,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(253, 23);
             textBox1.TabIndex = 1;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // textBox2
             // 
@@ -71,6 +72,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(253, 23);
             textBox2.TabIndex = 2;
+            textBox2.KeyDown += textBox2_KeyDown;
             // 
             // pictureBox1
             // 
@@ -154,12 +156,12 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button1);
-            FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "login_Screen";
+            Opacity = 1D;
             ShowInTaskbar = false;
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;

@@ -69,6 +69,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(252, 23);
             textBox1.TabIndex = 10;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
             // textBox2
             // 
@@ -76,6 +77,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(252, 23);
             textBox2.TabIndex = 11;
+            textBox2.KeyDown += textBox2_KeyDown_1;
             // 
             // label1
             // 

@@ -157,6 +157,22 @@
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Win32.SystemEvents/9.0.5": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.525.21509"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.525.21509"
+          }
+        }
+      },
       "MySql.Data/9.3.0": {
         "dependencies": {
           "BouncyCastle.Cryptography": "2.5.1",
@@ -247,6 +263,21 @@
             "assetType": "runtime",
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "System.Drawing.Common/9.0.5": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "9.0.5"
+        },
+        "runtime": {
+          "lib/net8.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.525.21601"
+          },
+          "lib/net8.0/System.Private.Windows.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.525.21601"
           }
         }
       },
@@ -527,6 +558,13 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+    "Microsoft.Win32.SystemEvents/9.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D4OYNpmvAsF9MkaY2W8Jue2XuNHDhygvwzo019hs+lP85KaVnOlXmqsjDKr1dHb1DPxDnOKpe6mAgJN7S6ttwg==",
+      "path": "microsoft.win32.systemevents/9.0.5",
+      "hashPath": "microsoft.win32.systemevents.9.0.5.nupkg.sha512"
+    },
     "MySql.Data/9.3.0": {
       "type": "package",
       "serviceable": true,
@@ -561,6 +599,13 @@
       "sha512": "sha512-fdYxcRjQqTTacKId/2IECojlDSFvp7LP5N78+0z/xH7v/Tuw5ZAxu23Y6PTCRinqyu2ePx+Gn1098NC6jM6d+A==",
       "path": "system.diagnostics.eventlog/8.0.0",
       "hashPath": "system.diagnostics.eventlog.8.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Common/9.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-T/6nqx0B7/uTe5JjBwrKZilLuwfhHLOVmNKlT/wr4A9Dna94mgTdz3lTfrdJ72QRx7IHCv/LzoJPmFSfK/N6WA==",
+      "path": "system.drawing.common/9.0.5",
+      "hashPath": "system.drawing.common.9.0.5.nupkg.sha512"
     },
     "System.IO/4.3.0": {
       "type": "package",

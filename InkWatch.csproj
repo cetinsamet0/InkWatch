@@ -3,9 +3,13 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>   
     <ImplicitUsings>enable</ImplicitUsings>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <PlatformTarget>x64</PlatformTarget>
+	  <!-- veya x86, sisteminize göre -->
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <!-- Bu önemli -->
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,10 +31,10 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.4" />
     <PackageReference Include="MySql.Data" Version="9.3.0" />
+    <PackageReference Include="System.Drawing.Common" Version="9.0.5" />
     <PackageReference Include="System.Text.Json" Version="9.0.5" />
   </ItemGroup>
-
-  <ItemGroup>
+	<ItemGroup>
     <None Update="appconfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace InkWatch
 {
-    public partial class db_settings : Form
+    public partial class db_settings : InkWatch.BaseForm
     {
         public db_settings()
         {
@@ -21,6 +21,7 @@ namespace InkWatch
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Hide();
+        
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -39,12 +40,12 @@ namespace InkWatch
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-              
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult soru = MessageBox.Show("Yeni veritabanı bilgileri kaydedilsin mi? ","Dikkat",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            DialogResult soru = MessageBox.Show("Yeni veritabanı bilgileri kaydedilsin mi? ", "Dikkat", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (soru == DialogResult.Yes)
             {
                 string new_ip = textBox1.Text.ToString();
@@ -56,8 +57,27 @@ namespace InkWatch
             {
                 MessageBox.Show("Kaydetme işleminden vazgeçildi!");
             }
-            
-  
+
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                textBox2.Focus();
+            }
+        }
+
+
+        private void textBox2_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                button1.Focus();
+            }
         }
     }
 }
