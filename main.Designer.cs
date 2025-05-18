@@ -32,7 +32,7 @@
             pictureBox1 = new PictureBox();
             dataGridView1 = new DataGridView();
             pictureBox2 = new PictureBox();
-            button1 = new Button();
+            btnappsettings = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -79,19 +79,20 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // button1
+            // btnappsettings
             // 
-            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleRight;
-            button1.Location = new Point(978, 95);
-            button1.Name = "button1";
-            button1.Padding = new Padding(5);
-            button1.Size = new Size(210, 65);
-            button1.TabIndex = 3;
-            button1.Text = "Uygulama Ayarları";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = true;
+            btnappsettings.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnappsettings.Image = (Image)resources.GetObject("btnappsettings.Image");
+            btnappsettings.ImageAlign = ContentAlignment.MiddleRight;
+            btnappsettings.Location = new Point(978, 95);
+            btnappsettings.Name = "btnappsettings";
+            btnappsettings.Padding = new Padding(5);
+            btnappsettings.Size = new Size(210, 65);
+            btnappsettings.TabIndex = 3;
+            btnappsettings.Text = "Uygulama Ayarları";
+            btnappsettings.TextAlign = ContentAlignment.MiddleLeft;
+            btnappsettings.UseVisualStyleBackColor = true;
+            btnappsettings.Click += btnappsettings_Click;
             // 
             // button2
             // 
@@ -213,7 +214,7 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnappsettings);
             Controls.Add(pictureBox2);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox1);
@@ -239,7 +240,7 @@
         private PictureBox pictureBox1;
         private DataGridView dataGridView1;
         private PictureBox pictureBox2;
-        private Button button1;
+        private Button btnappsettings;
         private Button button2;
         private Button button3;
         private Button button4;

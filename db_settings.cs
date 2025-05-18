@@ -20,6 +20,7 @@ namespace InkWatch
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+
             this.Hide();
         
         }

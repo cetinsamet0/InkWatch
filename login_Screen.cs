@@ -17,14 +17,14 @@ namespace InkWatch
     {
         public string user_name { get; set; }
 
-        // WinAPI fonksiyonları
+        
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        // Sürükleme mesaj sabitleri
+        
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
         public login_Screen()
@@ -33,33 +33,7 @@ namespace InkWatch
         }
         string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatch_db;port={ConfigManager.Settings.ConnectionInfo.port}";
 
-        public void checkpass()
-        {
-
-            using (MySqlConnection conn = new MySqlConnection(connectionadress))
-            {
-                try
-                {
-                    conn.Open();
-                    MessageBox.Show("Bağlantı Başarılı");
-                    //string sql = "SELECT * FROM users";
-                    //MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    //MySqlDataReader reader = cmd.ExecuteReader();
-                    //while (reader.Read())
-                    //{
-                    //    MessageBox.Show("Kayıt:" + reader["user_name"] + reader["user_passwd"]);
-                    //}
-                    //reader.Close();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-
-        }
-
+       
         private void login_Screen_Load(object sender, EventArgs e)
         {
             
@@ -76,7 +50,7 @@ namespace InkWatch
 
             user_name = textBox1.Text.ToString();
             string password = textBox2.Text.ToString();
-            MessageBox.Show(user_name);
+          
             try
             {
                 using (MySqlConnection con = new MySqlConnection(connectionadress))
@@ -90,8 +64,7 @@ namespace InkWatch
                     {
                         if (reader.HasRows)
                         {
-                            MessageBox.Show("Giriş Başarılı");
-                            
+                           
                             this.Close();
 
                         }
@@ -108,8 +81,6 @@ namespace InkWatch
             catch (Exception ex)
             {
                 MessageBox.Show("Veritabanı Hatası: " + ex.Message, "Veritabanı Sorunu", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
 
             }
 

@@ -48,3 +48,5 @@ D:\cetinsamet0_Projects\InkWatch\obj\Debug\net8.0-windows\win-x64\refint\InkWatc
 D:\cetinsamet0_Projects\InkWatch\obj\Debug\net8.0-windows\win-x64\InkWatch.pdb
 D:\cetinsamet0_Projects\InkWatch\obj\Debug\net8.0-windows\win-x64\InkWatch.genruntimeconfig.cache
 D:\cetinsamet0_Projects\InkWatch\obj\Debug\net8.0-windows\win-x64\ref\InkWatch.dll
+D:\cetinsamet0_Projects\InkWatch\obj\Debug\net8.0-windows\win-x64\InkWatch.app_settingsform.resources
+D:\cetinsamet0_Projects\InkWatch\obj\Debug\net8.0-windows\win-x64\InkWatch.BaseForm.resources

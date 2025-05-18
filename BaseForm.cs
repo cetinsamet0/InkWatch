@@ -27,13 +27,14 @@ namespace InkWatch
         {
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(4);
-            this.BackColor = Color.White; // Border rengi
+            this.BackColor = Color.FromArgb(34, 36, 38);
             this.DoubleBuffered = true;
-
             this.Opacity = 0; // Fade-in için başta görünmez
             this.Load += BaseForm_Load;
             this.MouseDown += BaseForm_MouseDown;
             this.Paint += BaseForm_Paint;
+
+            
 
             //SetRoundedRegion();
 

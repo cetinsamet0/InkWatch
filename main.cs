@@ -10,15 +10,12 @@ namespace InkWatch
 {
     public partial class main : InkWatch.BaseForm
     {
-    
-        // WinAPI fonksiyonlarý
+        //Formu Sürüklenebilir yapan kodlar
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-        // Sürükleme mesaj sabitleri
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
 
@@ -27,13 +24,14 @@ namespace InkWatch
         public main()
         {
             InitializeComponent();
-            this.BackColor = Color.FromArgb(34, 36, 38); // içerik rengi
+
         }
 
 
         private void main_Load(object sender, EventArgs e)
         {
-            FormStyler.ButtonStyler(button1);
+            //Formu kiþiselleþtiren metotun çaðrýlmasý
+            FormStyler.ButtonStyler(btnappsettings);
             FormStyler.ButtonStyler(button2);
             FormStyler.ButtonStyler(button3);
             FormStyler.ButtonStyler(button4);
@@ -42,7 +40,8 @@ namespace InkWatch
             FormStyler.ButtonStyler(button7);
             FormStyler.DatagridViewStyle(dataGridView1);
 
-            
+            //Appconfig okuyarak uygulamayý kiþiselleþtiren yer
+
             bool hideApps = ConfigManager.Settings.AppSettings.hideallwindows;
             if (hideApps = false)
             {
@@ -50,18 +49,18 @@ namespace InkWatch
             }
 
             //!!!!Burdaki yorum satýrýný ileride kaldýr
-            this.Hide();
-            login_Screen loginscrenn = new login_Screen();
-            loginscrenn.ShowDialog();
-            
-            
 
-            label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
+            //this.Hide();
+            //login_Screen loginscrenn = new login_Screen();
+            //loginscrenn.ShowDialog();
+            //label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
 
-            string connectionString = "server=localhost;user=root;password=admin;database=InkWatch_db;port=3306";
+            string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatch_db;port={ConfigManager.Settings.ConnectionInfo.port}";
+
+            //Örnek Sorgu datagridnasýl gözüküyor bakmak için
             string query = "SELECT \r\n    p.printer_id,\r\n    b.brand_name,\r\n    m.model_name,\r\n    p.printer_ip,\r\n    p.printer_owner,\r\n    p.log_id,\r\n    p.printer_changepart_log\r\nFROM \r\n    tbl_printers p\r\nJOIN \r\n    tbl_brands b ON p.brand_id = b.brand_id\r\nJOIN \r\n    tbl_models m ON p.model_id = m.model_id;";
 
-            using (MySqlConnection con = new MySqlConnection(connectionString))
+            using (MySqlConnection con = new MySqlConnection(connectionadress))
 
             {
                 MySqlDataAdapter da = new MySqlDataAdapter(query, con);
@@ -70,13 +69,10 @@ namespace InkWatch
                 dataGridView1.DataSource = dt;
 
             }
-           
+
         }
 
-        private void ShowDesktop()
-        {
-            Process.Start("powershell", "-command \"(New-Object -ComObject shell.application).MinimizeAll()\"");
-        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -89,6 +85,19 @@ namespace InkWatch
                 ReleaseCapture();
                 SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
             }
+        }
+
+
+
+        private void ShowDesktop()
+        {
+            Process.Start("powershell", "-command \"(New-Object -ComObject shell.application).MinimizeAll()\"");
+        }
+
+        private void btnappsettings_Click(object sender, EventArgs e)
+        {
+            app_settingsform appsettings = new app_settingsform();
+            appsettings.ShowDialog();
         }
     }
 }
