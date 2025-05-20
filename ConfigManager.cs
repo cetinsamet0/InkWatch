@@ -42,7 +42,8 @@ namespace InkWatch
             Settings.ConnectionInfo.ipadress = ip;
             Settings.ConnectionInfo.port = port;
             Save();      
-            Load();              }
+            Load();              
+        }
     }
 
 

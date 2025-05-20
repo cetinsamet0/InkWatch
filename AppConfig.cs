@@ -19,6 +19,6 @@ namespace InkWatch
 
     public class AppSettings
     {
-        public bool hideallwindows { get; set; } 
+        public bool HideAllApps { get; set; } 
     }
 }

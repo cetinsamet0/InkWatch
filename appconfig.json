@@ -5,7 +5,7 @@
     },
 
     "AppSettings": {
-        "hideallapss": false
+        "HideAllApps": true
 
     }
 }

@@ -107,6 +107,7 @@
             button2.Text = "Yeni Yazıcı Ekle";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 

@@ -16,5 +16,8 @@
     <Compile Update="main.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="newPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

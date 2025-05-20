@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Microsoft.Extensions.Configuration;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 
 namespace InkWatch
 {
@@ -31,7 +32,7 @@ namespace InkWatch
         {
             InitializeComponent();
         }
-        string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatch_db;port={ConfigManager.Settings.ConnectionInfo.port}";
+        string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=inkwatchdb;port={ConfigManager.Settings.ConnectionInfo.port}";
 
        
         private void login_Screen_Load(object sender, EventArgs e)
@@ -45,12 +46,30 @@ namespace InkWatch
             Application.Exit();
         }
 
+        public static string ComputeSha256Hash(string rawData)
+        {
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                // Input string'i byte dizisine dönüştür
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Byte dizisini hex (onaltılık) string'e çevir
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2")); // x2: her byte için 2 basamak hexadecimal
+                }
+                return builder.ToString();
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
 
             user_name = textBox1.Text.ToString();
-            string password = textBox2.Text.ToString();
-          
+            string plaintext = textBox2.Text.ToString();
+            string passwordhash = ComputeSha256Hash(plaintext);
+            MessageBox.Show(passwordhash);
             try
             {
                 using (MySqlConnection con = new MySqlConnection(connectionadress))
@@ -58,7 +77,7 @@ namespace InkWatch
 
                     
                     con.Open();
-                    string sql = $"SELECT * FROM users WHERE user_name = '{user_name}' AND user_passwd = '{password}'";
+                    string sql = $"SELECT * FROM tbl_users WHERE username = '{user_name}' AND password_hash = '{passwordhash}'";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {

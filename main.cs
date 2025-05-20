@@ -42,8 +42,8 @@ namespace InkWatch
 
             //Appconfig okuyarak uygulamayý kiþiselleþtiren yer
 
-            bool hideApps = ConfigManager.Settings.AppSettings.hideallwindows;
-            if (hideApps = false)
+            bool hideApps = ConfigManager.Settings.AppSettings.HideAllApps;
+            if (hideApps)
             {
                 ShowDesktop();
             }
@@ -55,10 +55,32 @@ namespace InkWatch
             //loginscrenn.ShowDialog();
             //label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
 
-            string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatch_db;port={ConfigManager.Settings.ConnectionInfo.port}";
+            string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
 
             //Örnek Sorgu datagridnasýl gözüküyor bakmak için
-            string query = "SELECT \r\n    p.printer_id,\r\n    b.brand_name,\r\n    m.model_name,\r\n    p.printer_ip,\r\n    p.printer_owner,\r\n    p.log_id,\r\n    p.printer_changepart_log\r\nFROM \r\n    tbl_printers p\r\nJOIN \r\n    tbl_brands b ON p.brand_id = b.brand_id\r\nJOIN \r\n    tbl_models m ON p.model_id = m.model_id;";
+            string query = @"SELECT 
+    b.brand_name       AS 'Yazýcý Markasý',
+    m.model_name       AS 'Yazýcý Modeli',
+    d.departmant_name  AS 'Departman',
+    p.printer_sn       AS 'Seri Numarasý',
+    p.printer_ip       AS 'IP Adresi',
+    l.action           AS 'Son Ýþlem',
+    l.timestamp        AS 'Ýþlem Tarihi'
+FROM tbl_printers p
+JOIN tbl_brands b ON p.brand_id = b.brand_id
+JOIN tbl_models m ON p.model_id = m.model_id
+JOIN tbl_departmants d ON p.departmant_id = d.departmant_id
+LEFT JOIN (
+    SELECT l1.*
+    FROM tbl_logs l1
+    INNER JOIN (
+        SELECT printer_id, MAX(timestamp) AS max_time
+        FROM tbl_logs
+        GROUP BY printer_id
+    ) l2 ON l1.printer_id = l2.printer_id AND l1.timestamp = l2.max_time
+) l ON p.printer_id = l.printer_id;
+";
+
 
             using (MySqlConnection con = new MySqlConnection(connectionadress))
 
@@ -75,7 +97,7 @@ namespace InkWatch
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit(); 
         }
 
         private void main_MouseDown(object sender, MouseEventArgs e)
@@ -98,6 +120,13 @@ namespace InkWatch
         {
             app_settingsform appsettings = new app_settingsform();
             appsettings.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            newPrinter newprinterform = new newPrinter();
+            newprinterform.Show();
+            this.Hide();
         }
     }
 }
