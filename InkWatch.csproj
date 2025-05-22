@@ -35,7 +35,7 @@
     <PackageReference Include="System.Text.Json" Version="9.0.5" />
   </ItemGroup>
 	<ItemGroup>
-    <None Update="appconfig.json">
+    <None Update="configs\appconfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

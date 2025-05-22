@@ -1,22 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="app_settingsform.cs">
+    <Compile Update="mainForms\app_settingsform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="BaseForm.cs">
+    <Compile Update="mainForms\faultrecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="db_settings.cs">
+    <Compile Update="mainForms\usersettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="login_Screen.cs">
+    <Compile Update="styling\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="main.cs">
+    <Compile Update="mainForms\db_settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="newPrinter.cs">
+    <Compile Update="mainForms\login_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="mainForms\main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="mainForms\newPrinter.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
