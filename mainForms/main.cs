@@ -7,6 +7,8 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using InkWatch.styling;
 using InkWatch.configs;
+using System.Media;
+
 
 namespace InkWatch.mainForms
 {
@@ -24,6 +26,7 @@ namespace InkWatch.mainForms
 
         private void main_Load(object sender, EventArgs e)
         {
+            
             //Formu kiþiselleþtiren metotun çaðrýlmasý
             FormStyler.ButtonStyler(btnappsettings);
             FormStyler.ButtonStyler(button2);
@@ -36,11 +39,17 @@ namespace InkWatch.mainForms
             this.StartPosition = FormStartPosition.CenterScreen;
 
             //Appconfig okuyarak uygulamayý kiþiselleþtiren yer
-
+           
             bool hideApps = ConfigManager.Settings.AppSettings.HideAllApps;
             if (hideApps)
             {
                 ShowDesktop();
+            }
+            bool playMusic = ConfigManager.Settings.AppSettings.PlayMusic;
+            if (playMusic) {
+
+                PlayerMusic();
+                pictureBox2.Visible = true;
             }
 
 
@@ -105,7 +114,18 @@ LEFT JOIN (
             }
         }
 
-
+       private SoundPlayer player;
+      
+        public void PlayerMusic()
+        {
+            try
+            {
+                player = new SoundPlayer("musics/cirsus.wav");
+                player.PlayLooping();
+            }
+            catch (Exception ex) { MessageBox.Show("Muhtemelen müzik dosyasý bulunamadý!"); }
+            
+        }
 
         private void ShowDesktop()
         {
@@ -141,6 +161,30 @@ LEFT JOIN (
             usersettings usersettings = new usersettings(this);
             usersettings.Show();
             this.Hide();
+        }
+        int value = Convert.ToInt16(ConfigManager.Settings.AppSettings.PlayMusic);
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(value.ToString());
+            value ++ ; 
+            if(value % 2 == 0)
+            {
+                pictureBox2.Image = Properties.Resources.volumeon;
+                if (player != null)
+                {
+                    player.PlayLooping();
+                }
+            }
+            else
+            {
+                pictureBox2.Image = Properties.Resources.mute;
+                if (player != null)
+                {
+                    player.Stop();
+                }
+                
+            }
+            
         }
     }
 }

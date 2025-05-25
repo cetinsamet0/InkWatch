@@ -22,7 +22,7 @@ namespace InkWatch.mainForms
 
         private void usersettings_Load(object sender, EventArgs e)
         {
-            this.Location = anaForm.Location;
+            this.Location = _anaForm.Location;
         }
     }
 }

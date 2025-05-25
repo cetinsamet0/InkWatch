@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -8,6 +9,7 @@ namespace InkWatch.styling
 {
     public class BaseForm : Form
     {
+        
         // Sürükleme için gerekli WinAPI
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -32,18 +34,21 @@ namespace InkWatch.styling
             Load += BaseForm_Load;
             MouseDown += BaseForm_MouseDown;
             Paint += BaseForm_Paint;
-
             
 
 
-           
+
         }
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
-        }
 
-       
+          
+
+
+        }
+        
+
         private void BaseForm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left || e.Button == MouseButtons.Right)
@@ -55,9 +60,10 @@ namespace InkWatch.styling
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
+            
             int borderThickness = 1;
             Color borderColor = Color.White;
-
+            
             // Kenarlık çiz
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle,
                 borderColor, borderThickness, ButtonBorderStyle.Solid,

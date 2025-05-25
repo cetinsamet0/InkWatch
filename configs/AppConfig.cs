@@ -20,5 +20,6 @@ namespace InkWatch.configs
     public class AppSettings
     {
         public bool HideAllApps { get; set; } 
+        public bool PlayMusic { get; set; } 
     }
 }

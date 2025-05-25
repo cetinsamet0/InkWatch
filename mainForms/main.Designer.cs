@@ -65,26 +65,28 @@
             dataGridView1.Location = new Point(12, 176);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1176, 412);
+            dataGridView1.Size = new Size(1176, 411);
             dataGridView1.TabIndex = 1;
             // 
             // pictureBox2
             // 
             pictureBox2.Cursor = Cursors.Hand;
-            pictureBox2.Image = Properties.Resources.question;
-            pictureBox2.Location = new Point(1066, 12);
+            pictureBox2.Image = Properties.Resources.volumeon;
+            pictureBox2.Location = new Point(1120, 96);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(48, 48);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.Size = new Size(68, 66);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
+            pictureBox2.Visible = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // btnappsettings
             // 
             btnappsettings.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnappsettings.Image = (Image)resources.GetObject("btnappsettings.Image");
             btnappsettings.ImageAlign = ContentAlignment.MiddleRight;
-            btnappsettings.Location = new Point(978, 95);
+            btnappsettings.Location = new Point(876, 96);
             btnappsettings.Name = "btnappsettings";
             btnappsettings.Padding = new Padding(5);
             btnappsettings.Size = new Size(210, 65);
@@ -172,7 +174,7 @@
             button7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
             button7.Image = (Image)resources.GetObject("button7.Image");
             button7.ImageAlign = ContentAlignment.MiddleRight;
-            button7.Location = new Point(584, 97);
+            button7.Location = new Point(584, 96);
             button7.Name = "button7";
             button7.Padding = new Padding(5);
             button7.Size = new Size(269, 65);
@@ -184,7 +186,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(1012, 12);
+            pictureBox3.Location = new Point(1057, 17);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(48, 48);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -196,7 +198,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(909, 27);
+            label1.Location = new Point(876, 30);
             label1.Name = "label1";
             label1.Size = new Size(97, 17);
             label1.TabIndex = 11;
@@ -221,6 +223,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox1);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;

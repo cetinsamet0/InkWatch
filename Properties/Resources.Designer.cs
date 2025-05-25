@@ -91,6 +91,16 @@ namespace InkWatch.Properties {
         }
         
         /// <summary>
+        ///   System.Byte[] türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static byte[] KGRedHands {
+            get {
+                object obj = ResourceManager.GetObject("KGRedHands", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
         internal static System.Drawing.Bitmap logo {
@@ -103,10 +113,30 @@ namespace InkWatch.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap mute {
+            get {
+                object obj = ResourceManager.GetObject("mute", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap printer_animation {
             get {
                 object obj = ResourceManager.GetObject("printer_animation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (Simge) öğesine benzeyen System.Drawing.Icon türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Icon printerico {
+            get {
+                object obj = ResourceManager.GetObject("printerico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -146,6 +176,16 @@ namespace InkWatch.Properties {
         internal static System.Drawing.Bitmap time {
             get {
                 object obj = ResourceManager.GetObject("time", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap volumeon {
+            get {
+                object obj = ResourceManager.GetObject("volumeon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

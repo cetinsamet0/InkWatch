@@ -31,7 +31,7 @@ namespace InkWatch.mainForms
         {
             configReader();
 
-            
+
 
             labelSaat.Text = DateTime.Now.ToString("dd.MM.yyyy HH:mm");
             SaatGostericiBaslat();
@@ -60,7 +60,7 @@ namespace InkWatch.mainForms
 
         }
 
-        
+
         private void configReader()
         {
             bool hideApps = ConfigManager.Settings.AppSettings.HideAllApps;
@@ -73,13 +73,23 @@ namespace InkWatch.mainForms
 
                 checkBox1.Checked = false;
             }
-           
+            bool playMusic = ConfigManager.Settings.AppSettings.PlayMusic;
+            if (playMusic)
+            {
+                checkBox2.Checked = true;
+            }
+            else
+            {
+
+                checkBox2.Checked = false;
+            }
+
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             string configPath = "configs/appconfig.json";
-            string json = File.ReadAllText(configPath); 
+            string json = File.ReadAllText(configPath);
             AppConfig config = JsonSerializer.Deserialize<AppConfig>(json);
             config.AppSettings.HideAllApps = checkBox1.Checked;
             var options = new JsonSerializerOptions { WriteIndented = true };
@@ -87,6 +97,17 @@ namespace InkWatch.mainForms
             File.WriteAllText(configPath, updateJson);
 
 
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            string configPath = "configs/appconfig.json";
+            string json = File.ReadAllText(configPath);
+            AppConfig config = JsonSerializer.Deserialize<AppConfig>(json);
+            config.AppSettings.PlayMusic = checkBox2.Checked;
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string updateJson = JsonSerializer.Serialize(config, options);
+            File.WriteAllText(configPath, updateJson);
         }
     }
 }

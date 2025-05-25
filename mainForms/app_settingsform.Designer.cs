@@ -34,6 +34,7 @@
             labelSaat = new Label();
             pictureBox3 = new PictureBox();
             label1 = new Label();
+            checkBox2 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
@@ -56,7 +57,7 @@
             checkBox1.Cursor = Cursors.Hand;
             checkBox1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             checkBox1.ForeColor = SystemColors.ButtonHighlight;
-            checkBox1.Location = new Point(38, 96);
+            checkBox1.Location = new Point(28, 99);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(277, 25);
             checkBox1.TabIndex = 0;
@@ -97,11 +98,26 @@
             label1.TabIndex = 4;
             label1.Text = "*Değişiklikler otomatik kaydedilir. \r\nGeri tuşuna basıldığında uygulama yeniden başlatılır.\r\n";
             // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Cursor = Cursors.Hand;
+            checkBox2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            checkBox2.ForeColor = SystemColors.ButtonHighlight;
+            checkBox2.Location = new Point(28, 130);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(270, 25);
+            checkBox2.TabIndex = 5;
+            checkBox2.Text = "Program açıldığında müzik oynat.\r\n";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            // 
             // app_settingsform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(668, 417);
+            Controls.Add(checkBox2);
             Controls.Add(label1);
             Controls.Add(pictureBox3);
             Controls.Add(checkBox1);
@@ -127,5 +143,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private Label label1;
+        private CheckBox checkBox2;
     }
 }

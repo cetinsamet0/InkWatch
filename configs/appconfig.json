@@ -5,7 +5,7 @@
     },
 
     "AppSettings": {
-        "HideAllApps": true
-
+        "HideAllApps": true,
+        "PlayMusic" :  true
     }
 }

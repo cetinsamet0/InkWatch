@@ -32,11 +32,25 @@ namespace InkWatch.mainForms
         private void newPrinter_Load(object sender, EventArgs e)
         {
             this.Location = _anaForm.Location;
+      
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+
+    
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+                {
+            // Sadece rakam, nokta ve kontrol tuşlarına (silme, backspace) izin ver
+         if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true; // karakteri engelle
+         }
+        
+
     }
+}
 }

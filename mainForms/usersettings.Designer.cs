@@ -64,6 +64,7 @@
             ClientSize = new Size(1184, 561);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "usersettings";
             Text = "usersettings";
             Load += usersettings_Load;
