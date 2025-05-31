@@ -4,23 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace InkWatch.styling
 {
     internal class FormStyler
     {
-        public static void ButtonStyler(Button btn)
+        public static void ButtonStyler(Control parent)
         {
-            btn.FlatStyle = FlatStyle.Flat;
-            btn.FlatAppearance.BorderSize = 1;
-            btn.BackColor = Color.FromArgb(192, 66, 255);
-            btn.ForeColor = Color.White;
-            btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            btn.Cursor = Cursors.Hand;
+            if (parent is Form form && form.Name == "login_Screen")
+                return;
 
-            // Hover ve tıklama renkleri
-            btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 52, 54);
-            btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 30, 32);
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is Button btn)
+                {
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderSize = 1;
+                    btn.BackColor = Color.FromArgb(192, 66, 255);
+                    btn.ForeColor = Color.White;
+                    btn.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                    btn.Cursor = Cursors.Hand;
+
+                    // Hover ve tıklama renkleri
+                    btn.FlatAppearance.MouseOverBackColor = Color.FromArgb(50, 52, 54);
+                    btn.FlatAppearance.MouseDownBackColor = Color.FromArgb(28, 30, 32);
+                }
+                if (ctrl.HasChildren)
+                {
+                    ButtonStyler(ctrl);
+                }
+            }
+            
         }
         public static void DatagridViewStyle(DataGridView dataGridView)
         {

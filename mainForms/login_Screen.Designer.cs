@@ -57,6 +57,8 @@
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            button1.MouseEnter += button1_MouseEnter;
+            button1.MouseLeave += button1_MouseLeave;
             // 
             // textBox1
             // 
@@ -70,6 +72,7 @@
             // 
             textBox2.Location = new Point(166, 238);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(253, 23);
             textBox2.TabIndex = 2;
             textBox2.KeyDown += textBox2_KeyDown;
@@ -161,7 +164,6 @@
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             Name = "login_Screen";
-            Opacity = 1D;
             ShowInTaskbar = false;
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;

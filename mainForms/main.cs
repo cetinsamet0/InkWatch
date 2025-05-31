@@ -27,14 +27,7 @@ namespace InkWatch.mainForms
         private void main_Load(object sender, EventArgs e)
         {
             
-            //Formu kiþiselleþtiren metotun çaðrýlmasý
-            FormStyler.ButtonStyler(btnappsettings);
-            FormStyler.ButtonStyler(button2);
-            FormStyler.ButtonStyler(button3);
-            FormStyler.ButtonStyler(button4);
-            FormStyler.ButtonStyler(button5);
-            FormStyler.ButtonStyler(button6);
-            FormStyler.ButtonStyler(button7);
+           
             FormStyler.DatagridViewStyle(dataGridView1);
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -55,10 +48,10 @@ namespace InkWatch.mainForms
 
             //!!!!Burdaki yorum satýrýný ileride kaldýr
 
-            this.Hide();
-            login_Screen loginscrenn = new login_Screen();
-            loginscrenn.ShowDialog();
-            label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
+            //this.Hide();
+            //login_Screen loginscrenn = new login_Screen();
+            //loginscrenn.ShowDialog();
+            //label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
 
             string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
 

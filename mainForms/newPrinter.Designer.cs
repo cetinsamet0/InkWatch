@@ -44,6 +44,13 @@
             dataGridView1 = new DataGridView();
             dateTimePicker1 = new DateTimePicker();
             label6 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -75,6 +82,7 @@
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(101, 30);
             comboBox1.Name = "comboBox1";
@@ -101,6 +109,7 @@
             // 
             // comboBox2
             // 
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
             comboBox2.Location = new Point(101, 79);
             comboBox2.Name = "comboBox2";
@@ -118,6 +127,7 @@
             // 
             // comboBox3
             // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(373, 30);
             comboBox3.Name = "comboBox3";
@@ -186,12 +196,82 @@
             label6.TabIndex = 18;
             label6.Text = "Teslim Tarihi:";
             // 
+            // button1
+            // 
+            button1.Location = new Point(751, 27);
+            button1.Name = "button1";
+            button1.Size = new Size(157, 34);
+            button1.TabIndex = 19;
+            button1.Text = "Marka Ekle";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(751, 72);
+            button2.Name = "button2";
+            button2.Size = new Size(157, 34);
+            button2.TabIndex = 20;
+            button2.Text = "Model Ekle";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(751, 118);
+            button3.Name = "button3";
+            button3.Size = new Size(157, 34);
+            button3.TabIndex = 21;
+            button3.Text = "Departman Ekle";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(929, 118);
+            button4.Name = "button4";
+            button4.Size = new Size(157, 34);
+            button4.TabIndex = 24;
+            button4.Text = "Departman Ekle";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(929, 72);
+            button5.Name = "button5";
+            button5.Size = new Size(157, 34);
+            button5.TabIndex = 23;
+            button5.Text = "Model Ekle";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(929, 27);
+            button6.Name = "button6";
+            button6.Size = new Size(157, 34);
+            button6.TabIndex = 22;
+            button6.Text = "Marka Ekle";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(627, 27);
+            button7.Name = "button7";
+            button7.Size = new Size(110, 125);
+            button7.TabIndex = 25;
+            button7.Text = "Yazıcıyı Ekle";
+            button7.UseVisualStyleBackColor = true;
+            // 
             // newPrinter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 38);
             ClientSize = new Size(1200, 600);
+            Controls.Add(button7);
+            Controls.Add(button4);
+            Controls.Add(button5);
+            Controls.Add(button6);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(label6);
             Controls.Add(dateTimePicker1);
             Controls.Add(dataGridView1);
@@ -238,5 +318,12 @@
         private DataGridView dataGridView1;
         private DateTimePicker dateTimePicker1;
         private Label label6;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Button button7;
     }
 }

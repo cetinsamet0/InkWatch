@@ -23,18 +23,20 @@ namespace InkWatch.mainForms
     {
         public string user_name { get; set; }
 
-        
-        
+
+
         public login_Screen()
         {
             InitializeComponent();
         }
         string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=inkwatchdb;port={ConfigManager.Settings.ConnectionInfo.port}";
 
-       
+
         private void login_Screen_Load(object sender, EventArgs e)
         {
-            
+            button1.Cursor = Cursors.Hand;
+            button1.BackColor = Color.FromArgb(255, 255, 255);
+            button1.ForeColor = Color.Black;
 
         }
 
@@ -66,13 +68,13 @@ namespace InkWatch.mainForms
             user_name = textBox1.Text.ToString();
             string plaintext = textBox2.Text.ToString();
             string passwordhash = ComputeSha256Hash(plaintext);
-           
+
             try
             {
                 using (MySqlConnection con = new MySqlConnection(connectionadress))
                 {
 
-                    
+
                     con.Open();
                     string sql = $"SELECT * FROM tbl_users WHERE username = '{user_name}' AND password_hash = '{passwordhash}'";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -80,7 +82,7 @@ namespace InkWatch.mainForms
                     {
                         if (reader.HasRows)
                         {
-                           
+
                             this.Close();
 
                         }
@@ -110,7 +112,7 @@ namespace InkWatch.mainForms
                 pictureBox3.Visible = false;
                 db_set.ShowDialog();
                 pictureBox3.Visible = true;
-                
+
             }
             catch (Exception ex) { MessageBox.Show("Hata ile karşılaşıldı! " + ex.Message); }
 
@@ -127,11 +129,23 @@ namespace InkWatch.mainForms
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
                 button1.Focus();
             }
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.FromArgb(192, 66, 255);
+            button1.ForeColor = Color.White;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.FromArgb(255, 255, 255);
+            button1.ForeColor = Color.Black;
         }
     }
 }

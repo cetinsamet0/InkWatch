@@ -43,7 +43,7 @@ namespace InkWatch.styling
         private void BaseForm_Load(object sender, EventArgs e)
         {
 
-          
+            FormStyler.ButtonStyler(this);
 
 
         }
