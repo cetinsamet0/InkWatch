@@ -88,6 +88,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(252, 23);
             comboBox1.TabIndex = 1;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -204,6 +205,7 @@
             button1.TabIndex = 19;
             button1.Text = "Marka Ekle";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -258,6 +260,7 @@
             button7.TabIndex = 25;
             button7.Text = "Yazıcıyı Ekle";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // newPrinter
             // 

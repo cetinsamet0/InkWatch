@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\cetinsamet0_Projects\\InkWatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\codeedittext.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\codeedittext.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +14,39 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": []
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "2e46dfb1-1400-435e-aaa7-d82e7d501fcc",
+        "Display": 1,
+        "X": 345,
+        "Y": 49,
+        "Width": 1528,
+        "Height": 784,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "newPrinter.cs [Tasar\u0131m]",
-              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter.cs",
-              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs [Tasar\u0131m]",
-              "RelativeToolTip": "mainForms\\newPrinter.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T09:31:17.502Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "newPrinter.cs",
-              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter.cs",
-              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs",
-              "RelativeToolTip": "mainForms\\newPrinter.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAFEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T12:46:16.337Z",
+              "Title": "codeedittext.txt",
+              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\codeedittext.txt",
+              "RelativeDocumentMoniker": "mainForms\\codeedittext.txt",
+              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\codeedittext.txt",
+              "RelativeToolTip": "mainForms\\codeedittext.txt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-06-17T08:38:48.357Z",
               "EditorCaption": ""
             }
           ]

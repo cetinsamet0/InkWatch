@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "D:\\cetinsamet0_Projects\\InkWatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|D:\\cetinsamet0_Projects\\InkWatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\styling\\formstyler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:styling\\formstyler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\cetinsamet0_projects\\inkwatch\\mainforms\\codeedittext.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\codeedittext.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,19 +38,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "newPrinter_AddBrands.cs",
+              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAwBsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T11:49:23.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "main.cs",
               "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\main.cs",
               "RelativeDocumentMoniker": "mainForms\\main.cs",
               "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\main.cs",
               "RelativeToolTip": "mainForms\\main.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAgwCoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAAwIEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T11:48:23.492Z",
+              "WhenOpened": "2025-06-17T11:38:40.172Z",
               "EditorCaption": ""
             },
             {
@@ -50,31 +75,78 @@
               "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\main.cs [Tasar\u0131m]",
               "RelativeToolTip": "mainForms\\main.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-29T11:48:17.053Z"
+              "WhenOpened": "2025-06-17T11:38:36.889Z",
+              "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormStyler.cs",
-              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\styling\\FormStyler.cs",
-              "RelativeDocumentMoniker": "styling\\FormStyler.cs",
-              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\styling\\FormStyler.cs",
-              "RelativeToolTip": "styling\\FormStyler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "newPrinter_AddBrands.cs [Tasar\u0131m]",
+              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs [Tasar\u0131m]",
+              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T13:14:59.663Z"
+              "WhenOpened": "2025-06-17T11:35:37.328Z",
+              "EditorCaption": " [Tasar\u0131m]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "newPrinter.cs",
               "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs",
               "RelativeDocumentMoniker": "mainForms\\newPrinter.cs",
-              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs*",
-              "RelativeToolTip": "mainForms\\newPrinter.cs*",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAAFEAAAAUAAAAAAAAAA==",
+              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs",
+              "RelativeToolTip": "mainForms\\newPrinter.cs",
+              "ViewState": "AgIAANgAAAAAAAAAAAAuwOoAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T12:46:16.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "newPrinter.cs [Tasar\u0131m]",
+              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs",
+              "RelativeDocumentMoniker": "mainForms\\newPrinter.cs",
+              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\newPrinter.cs [Tasar\u0131m]",
+              "RelativeToolTip": "mainForms\\newPrinter.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T08:23:49.149Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "2e46dfb1-1400-435e-aaa7-d82e7d501fcc",
+        "Display": 1,
+        "X": 345,
+        "Y": 49,
+        "Width": 1528,
+        "Height": 784,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "codeedittext.txt",
+              "DocumentMoniker": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\codeedittext.txt",
+              "RelativeDocumentMoniker": "mainForms\\codeedittext.txt",
+              "ToolTip": "D:\\cetinsamet0_Projects\\InkWatch\\mainForms\\codeedittext.txt",
+              "RelativeToolTip": "mainForms\\codeedittext.txt",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-06-17T08:38:48.357Z",
               "EditorCaption": ""
             }
           ]

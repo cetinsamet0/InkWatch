@@ -1,16 +1,8 @@
 ﻿using InkWatch.configs;
+using InkWatch.mainForms.newPrinter_SubForms;
 using InkWatch.styling;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data;
 namespace InkWatch.mainForms
 {
     public partial class newPrinter : BaseForm
@@ -37,6 +29,8 @@ namespace InkWatch.mainForms
         {
             this.Location = _anaForm.Location;
             fillTable();
+            brandadd();
+            departmantsadd();
         }
 
         private void fillTable()
@@ -64,7 +58,6 @@ LEFT JOIN (
     ) l2 ON l1.printer_id = l2.printer_id AND l1.timestamp = l2.max_time
 ) l ON p.printer_id = l.printer_id;
 ";
-            string brandquery = "SELECT brand_name FROM tbl_brands";
             try
             {
                 using (MySqlConnection con = new MySqlConnection(connectionadress))
@@ -73,27 +66,95 @@ LEFT JOIN (
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dataGridView1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
+
+            }
+
+
+        }
+        private void brandadd()
+        {
+            string brandquery = "SELECT brand_name FROM tbl_brands";
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionadress))
+                {
                     MySqlCommand brandadd = new MySqlCommand(brandquery, con);
                     MySqlDataAdapter brandadapter = new MySqlDataAdapter(brandadd);
                     DataTable branddt = new DataTable();
                     brandadapter.Fill(branddt);
                     comboBox1.DataSource = branddt;
                     comboBox1.DisplayMember = "brand_name";
-                    
+
 
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
-            
-            }
-            
-            
-        }
-        private void brandadd()
-        {
-            
 
+            }
+
+        }
+        private void modelsadd()
+        {
+            string modelsaddquerry = @"SELECT 
+tbl_brands.brand_id,
+tbl_brands.brand_name,
+tbl_models.model_id,
+tbl_models.model_name
+FROM 
+tbl_brands
+INNER JOIN 
+tbl_models ON tbl_brands.brand_id = tbl_models.brand_id
+WHERE 
+tbl_brands.brand_id = @BrandID;";
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionadress))
+                {
+                    MySqlCommand modelsadd = new MySqlCommand(modelsaddquerry, con);
+                    modelsadd.Parameters.AddWithValue("@BrandID", selectedBrandID);
+                    MySqlDataAdapter modelsadapter = new MySqlDataAdapter(modelsadd);
+                    DataTable modelsdt = new DataTable();
+                    modelsadapter.Fill(modelsdt);
+                    comboBox2.DataSource = modelsdt;
+                    comboBox2.DisplayMember = "model_name";
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
+
+            }
+        }
+        private void departmantsadd()
+        {
+            string departmentsaddquerry = @"Select departmant_name from tbl_departmants";
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(connectionadress))
+                {
+                    MySqlCommand departmansadd = new MySqlCommand(departmentsaddquerry, con);
+                    MySqlDataAdapter departmansadapter = new MySqlDataAdapter(departmansadd);
+                    DataTable departmentsdt = new DataTable();
+                    departmansadapter.Fill(departmentsdt);
+                    comboBox3.DataSource = departmentsdt;
+                    comboBox3.DisplayMember = "departmant_name";
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -101,16 +162,78 @@ LEFT JOIN (
             Application.Exit();
         }
 
-    
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-                {
+        {
             // Sadece rakam, nokta ve kontrol tuşlarına (silme, backspace) izin ver
-         if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
             {
                 e.Handled = true; // karakteri engelle
-         }
-        
+            }
 
+
+        }
+        int selectedBrandID = 0;
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            selectedBrandID = comboBox1.SelectedIndex + 1;
+            modelsadd();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int selectedBrandName = comboBox1.SelectedIndex + 1;
+            int selectedModelName = comboBox2.SelectedIndex + 1;
+            string newPrinterSerialNumber = textBox2.Text;
+            int selectedDepartmantName = comboBox3.SelectedIndex + 1;
+            string newPrinterIpAdress = textBox1.Text;
+            string addNewPrinterQuerry = @"INSERT INTO tbl_printers (brand_id, model_id, departmant_id, printer_sn, printer_ip)
+VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress);";
+            if (textBox2.Text != "" && textBox1.Text != "")
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connectionadress))
+                    {
+                        MySqlCommand addNewPrinterCommand = new MySqlCommand(addNewPrinterQuerry, conn);
+                        addNewPrinterCommand.Parameters.AddWithValue("@brandID", selectedBrandName);
+                        addNewPrinterCommand.Parameters.AddWithValue("@modelID", selectedModelName);
+                        addNewPrinterCommand.Parameters.AddWithValue("@departmantID", selectedDepartmantName);
+                        addNewPrinterCommand.Parameters.AddWithValue("@serialNumber", newPrinterSerialNumber);
+                        addNewPrinterCommand.Parameters.AddWithValue("@ipAdress", newPrinterIpAdress);
+                        conn.Open();
+                        addNewPrinterCommand.ExecuteNonQuery();
+                        conn.Close();
+
+                    }
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
+                }
+                MessageBox.Show("Yeni yazıcı sisteme eklendi!");
+            }
+            else
+            {
+                MessageBox.Show("Tüm alanları eksiksiz doldurduğunuzdan emin olunuz!", "Seri Numarası Veya Ip Adresi Girilmemiş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            newPrinter_AddBrands addBrands = new newPrinter_AddBrands();
+            addBrands.ShowDialog();
+
+        }
     }
-}
 }

@@ -1,0 +1,38 @@
+int selectedBrandName = comboBox1.SelectedIndex + 1;
+            int selectedModelName = comboBox2.SelectedIndex + 1;
+            string newPrinterSerialNumber = textBox2.Text;
+            int selectedDepartmantName = comboBox3.SelectedIndex + 1;
+            string newPrinterIpAdress = textBox1.Text;
+            string addNewPrinterQuerry = @"INSERT INTO tbl_printers (brand_id, model_id, departmant_id, printer_sn, printer_ip)
+VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress);";
+            if (textBox2.Text != "" && textBox1.Text != "")
+            {
+                try
+                {
+                    using (MySqlConnection conn = new MySqlConnection(connectionadress))
+                    {
+                        MySqlCommand addNewPrinterCommand = new MySqlCommand(addNewPrinterQuerry,conn);
+                        addNewPrinterCommand.Parameters.AddWithValue("@brandID",selectedBrandName);
+                        addNewPrinterCommand.Parameters.AddWithValue("@modelID", selectedModelName);
+                        addNewPrinterCommand.Parameters.AddWithValue("@departmantID", selectedDepartmantName);
+                        addNewPrinterCommand.Parameters.AddWithValue("@serialNumber", newPrinterSerialNumber);
+                        addNewPrinterCommand.Parameters.AddWithValue("@ipAdress", newPrinterIpAdress);
+                        conn.Open();
+                        addNewPrinterCommand.ExecuteNonQuery();
+                        conn.Close();
+
+                    }
+
+
+                }
+                catch (Exception ex) {
+
+                    MessageBox.Show("Program bir hatayla karþýlaþtý: " + ex.Message);
+                }
+                MessageBox.Show("Yeni yazýcý sisteme eklendi!");
+            }
+            else
+            {
+                MessageBox.Show("Tüm alanlarý eksiksiz doldurduðunuzdan emin olunuz!", "Seri Numarasý Veya Ip Adresi Girilmemiþ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }

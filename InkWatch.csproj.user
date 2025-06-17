@@ -7,6 +7,9 @@
     <Compile Update="mainForms\faultrecord.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="mainForms\newPrinter_SubForms\newPrinter_AddBrands.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="mainForms\usersettings.cs">
       <SubType>Form</SubType>
     </Compile>
