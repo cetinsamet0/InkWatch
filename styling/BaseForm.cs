@@ -20,7 +20,7 @@ namespace InkWatch.styling
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
 
-        private System.Windows.Forms.Timer fadeTimer;
+        
         
 
         private int cornerRadius = 20;

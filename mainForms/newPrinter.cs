@@ -12,6 +12,8 @@ namespace InkWatch.mainForms
         {
             InitializeComponent();
             _anaForm = anaForm;
+            login_Screen login_Screen = new login_Screen();
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -20,6 +22,7 @@ namespace InkWatch.mainForms
             _anaForm.Show();
             this.Close();
             _anaForm.Location = this.Location;
+            
 
         }
 
@@ -31,8 +34,9 @@ namespace InkWatch.mainForms
             fillTable();
             brandadd();
             departmantsadd();
+            
         }
-
+      
         private void fillTable()
         {
             FormStyler.DatagridViewStyle(dataGridView1);
@@ -78,7 +82,7 @@ LEFT JOIN (
         }
         private void brandadd()
         {
-            string brandquery = "SELECT brand_name FROM tbl_brands";
+            string brandquery = "SELECT brand_id,brand_name FROM tbl_brands";
             try
             {
                 using (MySqlConnection con = new MySqlConnection(connectionadress))
@@ -89,6 +93,7 @@ LEFT JOIN (
                     brandadapter.Fill(branddt);
                     comboBox1.DataSource = branddt;
                     comboBox1.DisplayMember = "brand_name";
+                    comboBox1.ValueMember = "brand_id";
 
 
                 }
@@ -100,6 +105,7 @@ LEFT JOIN (
             }
 
         }
+        
         private void modelsadd()
         {
             string modelsaddquerry = @"SELECT 
@@ -113,13 +119,13 @@ INNER JOIN
 tbl_models ON tbl_brands.brand_id = tbl_models.brand_id
 WHERE 
 tbl_brands.brand_id = @BrandID;";
-
+            
             try
             {
                 using (MySqlConnection con = new MySqlConnection(connectionadress))
                 {
                     MySqlCommand modelsadd = new MySqlCommand(modelsaddquerry, con);
-                    modelsadd.Parameters.AddWithValue("@BrandID", selectedBrandID);
+                    modelsadd.Parameters.AddWithValue("@BrandID",selectedBrandId);
                     MySqlDataAdapter modelsadapter = new MySqlDataAdapter(modelsadd);
                     DataTable modelsdt = new DataTable();
                     modelsadapter.Fill(modelsdt);
@@ -173,18 +179,18 @@ tbl_brands.brand_id = @BrandID;";
 
 
         }
-        int selectedBrandID = 0;
+        int selectedBrandId;
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectedBrandId = (int)comboBox1.SelectedValue;
 
-            selectedBrandID = comboBox1.SelectedIndex + 1;
             modelsadd();
 
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            int selectedBrandName = comboBox1.SelectedIndex + 1;
+            int selectedBrandId = (int)comboBox1.SelectedValue;
             int selectedModelName = comboBox2.SelectedIndex + 1;
             string newPrinterSerialNumber = textBox2.Text;
             int selectedDepartmantName = comboBox3.SelectedIndex + 1;
@@ -198,7 +204,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress);";
                     using (MySqlConnection conn = new MySqlConnection(connectionadress))
                     {
                         MySqlCommand addNewPrinterCommand = new MySqlCommand(addNewPrinterQuerry, conn);
-                        addNewPrinterCommand.Parameters.AddWithValue("@brandID", selectedBrandName);
+                        addNewPrinterCommand.Parameters.AddWithValue("@brandID", selectedBrandId);
                         addNewPrinterCommand.Parameters.AddWithValue("@modelID", selectedModelName);
                         addNewPrinterCommand.Parameters.AddWithValue("@departmantID", selectedDepartmantName);
                         addNewPrinterCommand.Parameters.AddWithValue("@serialNumber", newPrinterSerialNumber);
@@ -223,7 +229,8 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress);";
                 MessageBox.Show("Tüm alanları eksiksiz doldurduğunuzdan emin olunuz!", "Seri Numarası Veya Ip Adresi Girilmemiş", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
-
+           
+           
 
 
 

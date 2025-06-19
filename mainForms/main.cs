@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using InkWatch.styling;
 using InkWatch.configs;
 using System.Media;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace InkWatch.mainForms
@@ -47,12 +48,12 @@ namespace InkWatch.mainForms
 
 
             //!!!!Burdaki yorum satýrýný ileride kaldýr
-
-            //this.Hide();
-            //login_Screen loginscrenn = new login_Screen();
-            //loginscrenn.ShowDialog();
-            //label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
-
+            
+            this.Hide();
+            login_Screen loginscrenn = new login_Screen();
+            loginscrenn.ShowDialog();
+            label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
+            
             string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
 
             //Örnek Sorgu datagridnasýl gözüküyor bakmak için
@@ -91,7 +92,7 @@ LEFT JOIN (
             }
 
         }
-
+        
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -116,7 +117,7 @@ LEFT JOIN (
                 player = new SoundPlayer("musics/cirsus.wav");
                 player.PlayLooping();
             }
-            catch (Exception ex) { MessageBox.Show("Muhtemelen müzik dosyasý bulunamadý!"); }
+            catch (Exception ex) { MessageBox.Show("Muhtemelen müzik dosyasý bulunamadý! " + ex.Message ); }
             
         }
 
