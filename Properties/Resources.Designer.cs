@@ -123,6 +123,16 @@ namespace InkWatch.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap no_image_logo {
+            get {
+                object obj = ResourceManager.GetObject("no-image-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap printer_animation {
             get {
                 object obj = ResourceManager.GetObject("printer_animation", resourceCulture);

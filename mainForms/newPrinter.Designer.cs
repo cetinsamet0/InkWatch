@@ -47,13 +47,12 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
             button7 = new Button();
+            pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -72,7 +71,7 @@
             // 
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources.closebtn;
-            pictureBox2.Location = new Point(1125, 12);
+            pictureBox2.Location = new Point(1077, 12);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(68, 69);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -116,6 +115,7 @@
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(252, 23);
             comboBox2.TabIndex = 2;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -175,7 +175,7 @@
             dataGridView1.Location = new Point(12, 170);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1176, 412);
+            dataGridView1.Size = new Size(1133, 412);
             dataGridView1.TabIndex = 16;
             // 
             // dateTimePicker1
@@ -225,33 +225,6 @@
             button3.Text = "Departman Ekle";
             button3.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            button4.Location = new Point(929, 118);
-            button4.Name = "button4";
-            button4.Size = new Size(157, 34);
-            button4.TabIndex = 24;
-            button4.Text = "Departman Ekle";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(929, 72);
-            button5.Name = "button5";
-            button5.Size = new Size(157, 34);
-            button5.TabIndex = 23;
-            button5.Text = "Model Ekle";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(929, 27);
-            button6.Name = "button6";
-            button6.Size = new Size(157, 34);
-            button6.TabIndex = 22;
-            button6.Text = "Marka Ekle";
-            button6.UseVisualStyleBackColor = true;
-            // 
             // button7
             // 
             button7.Location = new Point(627, 27);
@@ -262,16 +235,24 @@
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.no_image_logo;
+            pictureBox3.Location = new Point(926, 27);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(130, 130);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 26;
+            pictureBox3.TabStop = false;
+            // 
             // newPrinter
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 38);
-            ClientSize = new Size(1200, 600);
+            ClientSize = new Size(1159, 600);
+            Controls.Add(pictureBox3);
             Controls.Add(button7);
-            Controls.Add(button4);
-            Controls.Add(button5);
-            Controls.Add(button6);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -300,6 +281,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -324,9 +306,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
         private Button button7;
+        private PictureBox pictureBox3;
     }
 }

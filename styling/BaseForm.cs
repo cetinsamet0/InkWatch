@@ -23,7 +23,7 @@ namespace InkWatch.styling
         
         
 
-        private int cornerRadius = 20;
+       
 
         public BaseForm()
         {
