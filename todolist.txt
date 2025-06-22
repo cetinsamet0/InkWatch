@@ -1,0 +1,5 @@
+//1//Yazýcý ekle kýsmýnda eðer ayný seri numarlý varsa hata mesajý verilecek.
+
+//2//Yazýcý markasý silme özelliði eklenecek.
+
+//3//Yazýcý markasý güncelleme özelliði eklenecek.

@@ -5,6 +5,8 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
+using System.Windows.Forms;
 using static Google.Protobuf.Reflection.SourceCodeInfo.Types;
 namespace InkWatch.mainForms
 {
@@ -224,11 +226,47 @@ tbl_brands.brand_id = @BrandID;";
             {
                 MessageBox.Show("Hata!");
             }
+           
+
+            try
+            {
+
+                using (MySqlConnection conn = new MySqlConnection(connectionadress))
+                {
+                    conn.Open();
+                    string sql = "SELECT brand_logo FROM tbl_brands WHERE brand_id = @brandId";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@brandId", selectedBrandId);
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            byte[] logoBytes = (byte[])result;
+                            using (MemoryStream ms = new MemoryStream(logoBytes))
+                            {
+                               pictureBox3.Image = Image.FromStream(ms);
+                                pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                            }
+                        }
+                        else
+                        {
+
+                            pictureBox3.Image = Properties.Resources.no_image_logo;
+                        }
+                    }
+                }
 
 
-            
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message, "Veri Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
         int selectedBrandId;
         int selectedModelId;
         private void button7_Click(object sender, EventArgs e)

@@ -98,7 +98,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label1.ForeColor = Color.Snow;
-            label1.Location = new Point(95, 81);
+            label1.Location = new Point(95, 95);
             label1.Name = "label1";
             label1.Size = new Size(200, 21);
             label1.TabIndex = 6;
@@ -118,7 +118,7 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(438, 64);
+            comboBox1.Location = new Point(788, 62);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(315, 23);
             comboBox1.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(440, 122);
+            textBox2.Location = new Point(790, 120);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(315, 23);
             textBox2.TabIndex = 9;
@@ -136,7 +136,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.Snow;
-            label2.Location = new Point(437, 34);
+            label2.Location = new Point(787, 38);
             label2.Name = "label2";
             label2.Size = new Size(315, 21);
             label2.TabIndex = 10;
@@ -144,7 +144,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(438, 469);
+            button3.Location = new Point(791, 468);
             button3.Name = "button3";
             button3.Size = new Size(314, 42);
             button3.TabIndex = 12;
@@ -153,7 +153,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(438, 422);
+            button4.Location = new Point(791, 420);
             button4.Name = "button4";
             button4.Size = new Size(314, 42);
             button4.TabIndex = 11;
@@ -163,7 +163,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.no_image_logo;
-            pictureBox3.Location = new Point(471, 164);
+            pictureBox3.Location = new Point(825, 161);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(240, 240);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -175,7 +175,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label3.ForeColor = Color.Snow;
-            label3.Location = new Point(438, 94);
+            label3.Location = new Point(787, 95);
             label3.Name = "label3";
             label3.Size = new Size(139, 21);
             label3.TabIndex = 14;
@@ -186,7 +186,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label4.ForeColor = Color.Snow;
-            label4.Location = new Point(813, 95);
+            label4.Location = new Point(427, 96);
             label4.Name = "label4";
             label4.Size = new Size(274, 21);
             label4.TabIndex = 16;
@@ -196,24 +196,26 @@
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(814, 125);
+            comboBox2.Location = new Point(428, 120);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(273, 23);
             comboBox2.TabIndex = 15;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // button5
             // 
-            button5.Location = new Point(814, 422);
+            button5.Location = new Point(428, 420);
             button5.Name = "button5";
             button5.Size = new Size(273, 42);
             button5.TabIndex = 17;
             button5.Text = "Bu Markayı Sil";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.no_image_logo;
-            pictureBox4.Location = new Point(829, 165);
+            pictureBox4.Location = new Point(438, 161);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(240, 240);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;

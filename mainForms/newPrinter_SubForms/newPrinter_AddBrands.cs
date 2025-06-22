@@ -81,12 +81,13 @@ namespace InkWatch.mainForms.newPrinter_SubForms
             }
         }
         int selectedBrandId;
-
+        int selectedBrandIdDelete;
+       
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedValue == null || comboBox1.SelectedIndex == -1)
+            if (comboBox1.SelectedValue == null || comboBox1.SelectedIndex == -1 || comboBox1.SelectedValue == DBNull.Value)
                 return;
-
+            MessageBox.Show(selectedBrandId.ToString());
             try
             {
                 selectedBrandId = Convert.ToInt32(comboBox1.SelectedValue);
@@ -111,9 +112,8 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                         }
                         else
                         {
-                           
-                            MessageBox.Show("Seçilen markanın logosu bulunamadı.", "Logo Bulunamadı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            
+                            pictureBox3.Image = Properties.Resources.no_image_logo; // Varsayılan logo resmi
+                            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                         }
                     }
                 }
@@ -135,23 +135,105 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                     MySqlDataAdapter brandadapter = new MySqlDataAdapter(brandadd);
                     DataTable branddt = new DataTable();
                     brandadapter.Fill(branddt);
+
+                    // "Lütfen bir marka seçiniz" satırı ekle
+                    DataRow newRow = branddt.NewRow();
+                    newRow["brand_id"] = DBNull.Value;
+                    newRow["brand_name"] = "Lütfen bir marka seçiniz";
+                    branddt.Rows.InsertAt(newRow, 0);
+
                     comboBox1.DisplayMember = "brand_name";
                     comboBox1.ValueMember = "brand_id";
                     comboBox1.DataSource = branddt;
+
+                    // comboBox2 için de aynı işlemi yap
+                    DataTable branddt2 = branddt.Copy();
                     comboBox2.DisplayMember = "brand_name";
                     comboBox2.ValueMember = "brand_id";
-                    comboBox2.DataSource = branddt;
+                    comboBox2.DataSource = branddt2;
 
-
-
+                    // İlk satırı seçili yap
+                    comboBox1.SelectedIndex = 0;
+                    comboBox2.SelectedIndex = 0;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedValue == null || comboBox2.SelectedIndex == -1 || comboBox2.SelectedValue == DBNull.Value)
+                return;
+           
+            try
+            {
+                selectedBrandIdDelete = Convert.ToInt32(comboBox2.SelectedValue);
+                MessageBox.Show(selectedBrandIdDelete.ToString());
+                using (MySqlConnection conn = new MySqlConnection(connectionadress))
+                {
+                    conn.Open();
+                    string sql = "SELECT brand_logo FROM tbl_brands WHERE brand_id = @brandId";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@brandId", selectedBrandIdDelete);
+
+                        object result = cmd.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            byte[] logoBytes = (byte[])result;
+                            using (MemoryStream ms = new MemoryStream(logoBytes))
+                            {
+                                pictureBox4.Image = Image.FromStream(ms);
+                                pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+                            }
+                        }
+                        else
+                        {
+                            pictureBox4.Image = Properties.Resources.no_image_logo; // Varsayılan logo resmi
+                            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message, "Veri Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectedBrandIdDelete = Convert.ToInt32(comboBox2.SelectedValue);
+                using (MySqlConnection conn = new MySqlConnection(connectionadress))
+                {
+                    conn.Open();
+                    string sql = "DELETE FROM tbl_brands WHERE brand_id = @brandId";
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@brandId", selectedBrandIdDelete);
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Marka başarıyla silindi.");
+                            brandadd(); // Markaları yeniden yükle
+                        }
+                        else
+                        {
+                            MessageBox.Show("Silme işlemi başarısız oldu. Lütfen tekrar deneyin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
 
             }
-
+            catch (Exception ex)
+            {
+              MessageBox.Show("Hata: " + ex.Message, "Silme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
