@@ -74,6 +74,7 @@ namespace InkWatch.styling
 
             // Sütunlar ekran boyuna göre otomatik genişlesin
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView.ReadOnly = true; // DataGridView'in düzenlenememesi için
         }
 
     }

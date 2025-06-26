@@ -209,9 +209,23 @@ namespace InkWatch.mainForms.newPrinter_SubForms
             try
             {
                 selectedBrandIdDelete = Convert.ToInt32(comboBox2.SelectedValue);
+
+                // Önce bu brand_id'nin tbl_printers tablosunda kullanılıp kullanılmadığını kontrol et
                 using (MySqlConnection conn = new MySqlConnection(connectionadress))
                 {
                     conn.Open();
+                    string checkSql = "SELECT COUNT(*) FROM tbl_printers WHERE brand_id = @brandId";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkSql, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@brandId", selectedBrandIdDelete);
+                        int printerCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+                        if (printerCount > 0)
+                        {
+                            MessageBox.Show("Bu marka, yazıcılar tablosunda kullanıldığı için silinemez.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                    // Silme işlemi
                     string sql = "DELETE FROM tbl_brands WHERE brand_id = @brandId";
                     using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                     {
@@ -228,11 +242,10 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                         }
                     }
                 }
-
             }
             catch (Exception ex)
             {
-              MessageBox.Show("Hata: " + ex.Message, "Silme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hata: " + ex.Message, "Silme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

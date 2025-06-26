@@ -17,7 +17,7 @@ namespace InkWatch.mainForms
         {
             InitializeComponent();
             _anaForm = anaForm;
-          
+
 
         }
 
@@ -55,7 +55,7 @@ namespace InkWatch.mainForms
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
-                        { 
+                        {
                             byte[] resimVerisi = reader["brand_logo"] as byte[];
                             if (resimVerisi != null)
                             {
@@ -74,6 +74,7 @@ namespace InkWatch.mainForms
         {
             FormStyler.DatagridViewStyle(dataGridView1);
             string query = @"SELECT 
+            p.printer_id       AS 'YazıcıID_Gizli',
             b.brand_name       AS 'Yazıcı Markası',
             m.model_name       AS 'Yazıcı Modeli',
             d.departmant_name  AS 'Departman',
@@ -104,15 +105,15 @@ namespace InkWatch.mainForms
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dataGridView1.DataSource = dt;
+                    // YazıcıID_Gizli kolonunu gizle
+                    if (dataGridView1.Columns.Contains("YazıcıID_Gizli"))
+                        dataGridView1.Columns["YazıcıID_Gizli"].Visible = false;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
-
             }
-
-
         }
         public void brandadd()
         {
@@ -226,7 +227,7 @@ tbl_brands.brand_id = @BrandID;";
             {
                 MessageBox.Show("Hata!");
             }
-           
+
 
             try
             {
@@ -245,7 +246,7 @@ tbl_brands.brand_id = @BrandID;";
                             byte[] logoBytes = (byte[])result;
                             using (MemoryStream ms = new MemoryStream(logoBytes))
                             {
-                               pictureBox3.Image = Image.FromStream(ms);
+                                pictureBox3.Image = Image.FromStream(ms);
                                 pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
                             }
                         }
@@ -321,7 +322,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
         private void button1_Click(object sender, EventArgs e)
         {
             location = this.Location;
-            
+
             newPrinter_AddBrands addBrands = new newPrinter_AddBrands(_anaForm);
             addBrands.ShowDialog();
 
@@ -330,7 +331,88 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedModelId = (int)comboBox2.SelectedValue;
+
+        }
+
+
+        public int selectePrinterId;
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dataGridView1.Columns.Contains("Seri Numarası"))
+            {
+                var dt = dataGridView1.DataSource as DataTable;
+                if (dt != null && dt.Columns.Contains("YazıcıID_Gizli"))
+                {
+                    selectePrinterId = Convert.ToInt32(dt.Rows[e.RowIndex]["YazıcıID_Gizli"]);
+                }
+                else
+                {
+                    if (dataGridView1.Columns.Contains("YazıcıID_Gizli"))
+                    {
+                        selectePrinterId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["YazıcıID_Gizli"].Value);
+                    }
+                    else
+                    {
+                        selectePrinterId = -1;
+                    }
+                }
+            }
+            //MessageBox.Show("Seçilen Yazıcı ID: " + selectePrinterId, "Yazıcı ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (selectePrinterId == 0)
+            {
+                MessageBox.Show("Lütfen bir yazıcı seçiniz!");
+                return;
+            }
+            string departman = string.Empty;
+            string marka = string.Empty;
+            string model = string.Empty;
+            string seriNo = string.Empty;
+
+            var dt = dataGridView1.DataSource as DataTable;
+            var rows = dt.Select($"YazıcıID_Gizli = {selectePrinterId}");
+            if (rows.Length > 0)
+            {
+                departman = rows[0]["Departman"].ToString();
+                marka = rows[0]["Yazıcı Markası"].ToString();
+                model = rows[0]["Yazıcı Modeli"].ToString();
+                seriNo = rows[0]["Seri Numarası"].ToString();
+                // Diğer alanlara da aynı şekilde erişebilirsiniz
+            }
+            DialogResult result = MessageBox.Show("" + departman + " Departmanına ait yazıcıyı silmek istediğinize emin misiniz?" + Environment.NewLine + "Yazıcı: " + marka + " " + model + Environment.NewLine + "Seri Numarası: " + seriNo, "Yazıcı Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionadress))
+                {
+                    conn.Open();
+                    string deleteQuery = "DELETE FROM tbl_printers WHERE printer_id = @printerId";
+                    using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@printerId", selectePrinterId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                fillTable();
+            }
+            else
+            {
+                MessageBox.Show("Yazıcı silme işlemi iptal edildi.", "İptal Edildi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            location = this.Location;
+            newPrinter_AddModels addModels = new newPrinter_AddModels(_anaForm);
+            addModels.ShowDialog();
             
         }
     }
+
 }
