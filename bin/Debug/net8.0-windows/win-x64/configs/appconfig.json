@@ -1,10 +1,11 @@
 {
-  "ConnectionInfo": {
-    "ipadress": "192.168.0.235",
-    "port": "3306"
-  },
-  "AppSettings": {
-    "HideAllApps": false,
-    "PlayMusic": false
-  }
+    "ConnectionInfo": {
+        "ipadress": "127.0.0.1",
+        "port": "3306"
+    },
+
+    "AppSettings": {
+        "HideAllApps": false,
+        "PlayMusic" :  false
+    }
 }

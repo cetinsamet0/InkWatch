@@ -171,7 +171,7 @@ namespace InkWatch.mainForms.newPrinter_SubForms
             try
             {
                 selectedBrandIdDelete = Convert.ToInt32(comboBox2.SelectedValue);
-                MessageBox.Show(selectedBrandIdDelete.ToString());
+                
                 using (MySqlConnection conn = new MySqlConnection(connectionadress))
                 {
                     conn.Open();

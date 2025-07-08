@@ -31,7 +31,7 @@ namespace InkWatch.mainForms
 
         }
 
-        string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
+        string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=root;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
 
         private void newPrinter_Load(object sender, EventArgs e)
         {

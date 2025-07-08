@@ -48,13 +48,13 @@ namespace InkWatch.mainForms
 
 
             //!!!!Burdaki yorum satýrýný ileride kaldýr
-            
+
             //this.Hide();
             //login_Screen loginscrenn = new login_Screen();
             //loginscrenn.ShowDialog();
             //label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
-            
-            string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
+
+            string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=root;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
 
             //Örnek Sorgu datagridnasýl gözüküyor bakmak için
             string query = @"SELECT 

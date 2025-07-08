@@ -6,6 +6,6 @@
 
     "AppSettings": {
         "HideAllApps": false,
-        "PlayMusic" :  true
+        "PlayMusic" :  false
     }
 }
