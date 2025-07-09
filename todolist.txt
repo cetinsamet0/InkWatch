@@ -3,3 +3,5 @@
 //2//Yazýcý markasý silme özelliði eklenecek.
 
 //3//Yazýcý markasý güncelleme özelliði eklenecek.
+
+//4//Her formun çözünürlüðü 1200; 600 olucakç.

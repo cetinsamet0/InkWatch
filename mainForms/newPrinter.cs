@@ -95,8 +95,8 @@ namespace InkWatch.mainForms
             FROM tbl_logs
             GROUP BY printer_id
             ) l2 ON l1.printer_id = l2.printer_id AND l1.timestamp = l2.max_time
-            ) l ON p.printer_id = l.printer_id
-            ORDER BY l.timestamp DESC";
+            ) l ON p.printer_id = l.printer_id WHERE is_deleted = FALSE
+            ORDER BY l.timestamp DESC ";
             try
             {
                 using (MySqlConnection con = new MySqlConnection(connectionadress))
@@ -380,8 +380,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
                 departman = rows[0]["Departman"].ToString();
                 marka = rows[0]["Yazıcı Markası"].ToString();
                 model = rows[0]["Yazıcı Modeli"].ToString();
-                seriNo = rows[0]["Seri Numarası"].ToString();
-                // Diğer alanlara da aynı şekilde erişebilirsiniz
+                seriNo = rows[0]["Seri Numarası"].ToString();  
             }
             DialogResult result = MessageBox.Show("" + departman + " Departmanına ait yazıcıyı silmek istediğinize emin misiniz?" + Environment.NewLine + "Yazıcı: " + marka + " " + model + Environment.NewLine + "Seri Numarası: " + seriNo, "Yazıcı Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
@@ -389,7 +388,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
                 using (MySqlConnection conn = new MySqlConnection(connectionadress))
                 {
                     conn.Open();
-                    string deleteQuery = "DELETE FROM tbl_printers WHERE printer_id = @printerId";
+                    string deleteQuery = "UPDATE tbl_printers SET is_deleted = TRUE WHERE printer_id = @printerId";
                     using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@printerId", selectePrinterId);

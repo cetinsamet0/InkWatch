@@ -72,7 +72,7 @@
             // 
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources.closebtn;
-            pictureBox2.Location = new Point(1077, 12);
+            pictureBox2.Location = new Point(1125, 12);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(68, 69);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -172,18 +172,19 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(12, 170);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1133, 412);
+            dataGridView1.Size = new Size(1181, 412);
             dataGridView1.TabIndex = 16;
             dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.CalendarFont = new Font("KG Red Hands", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dateTimePicker1.CalendarFont = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.DropDownAlign = LeftRightAlignment.Right;
             dateTimePicker1.Location = new Point(373, 129);
             dateTimePicker1.Margin = new Padding(0);
@@ -202,9 +203,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(751, 27);
+            button1.Location = new Point(772, 27);
             button1.Name = "button1";
-            button1.Size = new Size(157, 34);
+            button1.Size = new Size(197, 34);
             button1.TabIndex = 19;
             button1.Text = "Marka İşlemleri";
             button1.UseVisualStyleBackColor = true;
@@ -212,9 +213,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(751, 72);
+            button2.Location = new Point(772, 72);
             button2.Name = "button2";
-            button2.Size = new Size(157, 34);
+            button2.Size = new Size(197, 34);
             button2.TabIndex = 20;
             button2.Text = "Model İşlemleri";
             button2.UseVisualStyleBackColor = true;
@@ -222,9 +223,9 @@
             // 
             // button3
             // 
-            button3.Location = new Point(751, 118);
+            button3.Location = new Point(772, 118);
             button3.Name = "button3";
-            button3.Size = new Size(157, 34);
+            button3.Size = new Size(197, 34);
             button3.TabIndex = 21;
             button3.Text = "Departman İşlemleri";
             button3.UseVisualStyleBackColor = true;
@@ -233,7 +234,7 @@
             // 
             button7.Location = new Point(627, 27);
             button7.Name = "button7";
-            button7.Size = new Size(110, 54);
+            button7.Size = new Size(139, 54);
             button7.TabIndex = 25;
             button7.Text = "Yazıcıyı Ekle";
             button7.UseVisualStyleBackColor = true;
@@ -242,7 +243,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.no_image_logo;
-            pictureBox3.Location = new Point(926, 27);
+            pictureBox3.Location = new Point(982, 27);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(130, 130);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -253,7 +254,7 @@
             // 
             button4.Location = new Point(627, 87);
             button4.Name = "button4";
-            button4.Size = new Size(110, 65);
+            button4.Size = new Size(139, 65);
             button4.TabIndex = 27;
             button4.Text = "Seçili Yazıcıyı Sil";
             button4.UseVisualStyleBackColor = true;
@@ -264,7 +265,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(34, 36, 38);
-            ClientSize = new Size(1159, 600);
+            ClientSize = new Size(1200, 600);
             Controls.Add(button4);
             Controls.Add(pictureBox3);
             Controls.Add(button7);

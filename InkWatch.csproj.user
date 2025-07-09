@@ -10,6 +10,9 @@
     <Compile Update="mainForms\login_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="mainForms\fault_history.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="mainForms\newPrinter_SubForms\newPrinter_AddBrands.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,6 +20,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="mainForms\usersettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="mainForms\stock_Tracking.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="styling\BaseForm.cs">

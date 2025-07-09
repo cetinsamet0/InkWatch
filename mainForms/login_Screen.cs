@@ -29,7 +29,7 @@ namespace InkWatch.mainForms
         {
             InitializeComponent();
         }
-        string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=admin;password=admin;database=inkwatchdb;port={ConfigManager.Settings.ConnectionInfo.port}";
+        string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=root;password=admin;database=inkwatchdb;port={ConfigManager.Settings.ConnectionInfo.port}";
 
 
         private void login_Screen_Load(object sender, EventArgs e)

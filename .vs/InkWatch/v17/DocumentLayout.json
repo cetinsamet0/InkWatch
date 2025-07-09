@@ -3,31 +3,20 @@
   "WorkspaceRootPath": "D:\\!cetinsamet0Projects\\InkWatch\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\login_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\login_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\login_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\login_screen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|D:\\!cetinsamet0Projects\\InkWatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\configs\\appconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:configs\\appconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\configs\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:configs\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|D:\\!cetinsamet0Projects\\InkWatch\\mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,92 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appconfig.json",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\configs\\appconfig.json",
-              "RelativeDocumentMoniker": "configs\\appconfig.json",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\configs\\appconfig.json",
-              "RelativeToolTip": "configs\\appconfig.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-08T09:51:04.829Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppConfig.cs",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\configs\\AppConfig.cs",
-              "RelativeDocumentMoniker": "configs\\AppConfig.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\configs\\AppConfig.cs",
-              "RelativeToolTip": "configs\\AppConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-08T09:51:01.206Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.cs",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs",
-              "RelativeDocumentMoniker": "mainForms\\main.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs",
-              "RelativeToolTip": "mainForms\\main.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAEwDMAAAAaAAAAAAAAAA==",
+              "Title": "login_Screen.cs",
+              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\login_Screen.cs",
+              "RelativeDocumentMoniker": "mainForms\\login_Screen.cs",
+              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\login_Screen.cs",
+              "RelativeToolTip": "mainForms\\login_Screen.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwB8AAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T08:33:05.115Z",
+              "WhenOpened": "2025-07-09T08:51:18.434Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "login_Screen.cs [Tasar\u0131m]",
+              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\login_Screen.cs",
+              "RelativeDocumentMoniker": "mainForms\\login_Screen.cs",
+              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\login_Screen.cs [Tasar\u0131m]",
+              "RelativeToolTip": "mainForms\\login_Screen.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T08:51:16.754Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "main.cs",
+              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs",
+              "RelativeDocumentMoniker": "mainForms\\main.cs",
+              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs",
+              "RelativeToolTip": "mainForms\\main.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowDMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-09T08:50:29.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "main.cs [Tasar\u0131m]",
               "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs",
               "RelativeDocumentMoniker": "mainForms\\main.cs",
               "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs [Tasar\u0131m]",
               "RelativeToolTip": "mainForms\\main.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T08:33:02.289Z",
+              "WhenOpened": "2025-07-09T08:50:28.243Z",
               "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Microsoft.Common.CurrentVersion.targets",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
-              "ViewState": "AgIAAOMUAAAAAAAAAAAUwPMUAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-07-02T08:32:17.876Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "newPrinter_AddBrands.cs",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
-              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAYwK0AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T08:28:29.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "newPrinter_AddBrands.cs [Tasar\u0131m]",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs [Tasar\u0131m]",
-              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T08:27:47.336Z"
             }
           ]
         }

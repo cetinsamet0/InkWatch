@@ -1,5 +1,4 @@
-﻿using InkWatch.styling;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,33 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InkWatch.mainForms;
+using InkWatch.styling;
 
-namespace InkWatch.mainForms
+namespace InkWatch
 {
-    public partial class usersettings : BaseForm
+    public partial class stock_Tracking : BaseForm
     {
         private main _anaForm;
-        public usersettings(main anaForm)
+        public stock_Tracking(main anaForm)
         {
             InitializeComponent();
             _anaForm = anaForm;
         }
 
-        private void usersettings_Load(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Location = _anaForm.Location;
+            Application.Exit();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             _anaForm.Show();
             this.Close();
             _anaForm.Location = this.Location;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void stock_Tracking_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            Location = _anaForm.Location;
         }
     }
 }

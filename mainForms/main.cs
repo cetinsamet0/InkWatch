@@ -27,20 +27,21 @@ namespace InkWatch.mainForms
 
         private void main_Load(object sender, EventArgs e)
         {
-            
-           
+
+
             FormStyler.DatagridViewStyle(dataGridView1);
             this.StartPosition = FormStartPosition.CenterScreen;
 
             //Appconfig okuyarak uygulamayý kiþiselleþtiren yer
-           
+
             bool hideApps = ConfigManager.Settings.AppSettings.HideAllApps;
             if (hideApps)
             {
                 ShowDesktop();
             }
             bool playMusic = ConfigManager.Settings.AppSettings.PlayMusic;
-            if (playMusic) {
+            if (playMusic)
+            {
 
                 PlayerMusic();
                 pictureBox2.Visible = true;
@@ -49,10 +50,10 @@ namespace InkWatch.mainForms
 
             //!!!!Burdaki yorum satýrýný ileride kaldýr
 
-            //this.Hide();
-            //login_Screen loginscrenn = new login_Screen();
-            //loginscrenn.ShowDialog();
-            //label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
+            this.Hide();
+            login_Screen loginscrenn = new login_Screen();
+            loginscrenn.ShowDialog();
+            label1.Text = $"Kullanýcý: {loginscrenn.user_name}";
 
             string connectionadress = $"server={ConfigManager.Settings.ConnectionInfo.ipadress};user=root;password=admin;database=InkWatchDB;port={ConfigManager.Settings.ConnectionInfo.port}";
 
@@ -92,7 +93,7 @@ LEFT JOIN (
             }
 
         }
-        
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -108,8 +109,8 @@ LEFT JOIN (
             }
         }
 
-       private SoundPlayer player;
-      
+        private SoundPlayer player;
+
         public void PlayerMusic()
         {
             try
@@ -117,8 +118,8 @@ LEFT JOIN (
                 player = new SoundPlayer("musics/cirsus.wav");
                 player.PlayLooping();
             }
-            catch (Exception ex) { MessageBox.Show("Muhtemelen müzik dosyasý bulunamadý! " + ex.Message ); }
-            
+            catch (Exception ex) { MessageBox.Show("Muhtemelen müzik dosyasý bulunamadý! " + ex.Message); }
+
         }
 
         private void ShowDesktop()
@@ -160,8 +161,8 @@ LEFT JOIN (
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(value.ToString());
-            value ++ ; 
-            if(value % 2 == 0)
+            value++;
+            if (value % 2 == 0)
             {
                 pictureBox2.Image = Properties.Resources.volumeon;
                 if (player != null)
@@ -176,9 +177,25 @@ LEFT JOIN (
                 {
                     player.Stop();
                 }
-                
+
             }
-            
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            location = this.Location;
+            var stock_Tracking = new stock_Tracking(this);
+            stock_Tracking.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            location = this.Location;
+            var fault_history = new fault_history(this);
+            fault_history.Show();
+            this.Hide();
         }
     }
 }
