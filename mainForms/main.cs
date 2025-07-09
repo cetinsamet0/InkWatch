@@ -21,7 +21,7 @@ namespace InkWatch.mainForms
         public main()
         {
             InitializeComponent();
-
+            
         }
 
 

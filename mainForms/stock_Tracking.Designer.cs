@@ -66,6 +66,7 @@
             ClientSize = new Size(1184, 561);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "stock_Tracking";
             Text = "stock_Tracking";
             Load += stock_Tracking_Load;

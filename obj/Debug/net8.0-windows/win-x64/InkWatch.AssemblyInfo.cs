@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InkWatch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+16386ac4c97d57248013e3f33645f04b74e1f5c0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9842a72dc403c630e1f31a534dac1b08484f018")]
 [assembly: System.Reflection.AssemblyProductAttribute("InkWatch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InkWatch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -9,10 +9,15 @@ namespace InkWatch.styling
 {
     public class BaseForm : Form
     {
-        
+
         // Sürükleme için gerekli WinAPI
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+
+        private void InitializeComponent()
+        {
+
+        }
 
         [DllImport("user32.dll")]
         public static extern int SendMessage(nint hWnd, int Msg, int wParam, int lParam);
@@ -20,10 +25,10 @@ namespace InkWatch.styling
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HTCAPTION = 0x2;
 
-        
-        
 
-       
+
+
+
 
         public BaseForm()
         {
@@ -34,7 +39,7 @@ namespace InkWatch.styling
             Load += BaseForm_Load;
             MouseDown += BaseForm_MouseDown;
             Paint += BaseForm_Paint;
-            
+
 
 
 
@@ -47,7 +52,7 @@ namespace InkWatch.styling
 
 
         }
-        
+
 
         private void BaseForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -60,10 +65,10 @@ namespace InkWatch.styling
 
         private void BaseForm_Paint(object sender, PaintEventArgs e)
         {
-            
+
             int borderThickness = 1;
             Color borderColor = Color.White;
-            
+
             // Kenarlık çiz
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle,
                 borderColor, borderThickness, ButtonBorderStyle.Solid,
@@ -72,12 +77,12 @@ namespace InkWatch.styling
                 borderColor, borderThickness, ButtonBorderStyle.Solid);
         }
 
-        
 
-       /* protected override void OnResize(EventArgs e)
-        {
-            base.OnResize(e);
-            
-        }*/
+
+        /* protected override void OnResize(EventArgs e)
+         {
+             base.OnResize(e);
+
+         }*/
     }
 }

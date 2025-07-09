@@ -27,7 +27,7 @@ namespace InkWatch.mainForms
             _anaForm.Show();
             this.Close();
             _anaForm.Location = this.Location;
-
+         
 
         }
 

@@ -290,7 +290,7 @@
             ForeColor = SystemColors.ButtonHighlight;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "newPrinter";
-            ShowIcon = false;
+            ShowIcon = true;
             StartPosition = FormStartPosition.CenterParent;
             Text = "newPrinter";
             Load += newPrinter_Load;
