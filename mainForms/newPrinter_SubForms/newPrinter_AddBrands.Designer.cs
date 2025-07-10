@@ -150,6 +150,7 @@
             button3.TabIndex = 12;
             button3.Text = "Değişiklikleri Kaydet";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -159,6 +160,7 @@
             button4.TabIndex = 11;
             button4.Text = "Farklı Bir Logo Seç";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBox3
             // 

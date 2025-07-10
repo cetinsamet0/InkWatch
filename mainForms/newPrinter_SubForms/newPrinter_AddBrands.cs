@@ -60,34 +60,61 @@ namespace InkWatch.mainForms.newPrinter_SubForms
         private byte[] imageBytes;
         private void button2_Click(object sender, EventArgs e)
         {
-            if (imageBytes == null)
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("Lütfen önce bir resim seçin.");
+                MessageBox.Show("Lütfen marka adını girin.");
                 return;
             }
 
             using (MySqlConnection conn = new MySqlConnection(connectionadress))
             {
                 conn.Open();
-                string sql = "INSERT INTO tbl_brands (brand_name, brand_logo) VALUES (@brandName,@logo)";
 
+                // Marka zaten var mı kontrolü
+                string checkQuery = "SELECT COUNT(*) FROM tbl_brands WHERE brand_name = @brandName";
+                using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+                {
+                    checkCmd.Parameters.AddWithValue("@brandName", textBox1.Text.Trim());
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Bu marka zaten mevcut.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+                if (imageBytes == null)
+                {
+                    MessageBox.Show("Lütfen önce bir resim seçin.");
+                    return;
+                }
+                // Marka ekleme
+                string sql = "INSERT INTO tbl_brands (brand_name, brand_logo) VALUES (@brandName,@logo)";
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@brandName", textBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@brandName", textBox1.Text.Trim());
                     cmd.Parameters.Add("@logo", MySqlDbType.MediumBlob).Value = imageBytes;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Logo başarıyla yüklendi.");
+                    MessageBox.Show(
+                        "Marka ve logosu başarıyla eklendi.",
+                        "Başarılı",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                    brandadd(); // Markaları güncelle
                 }
             }
         }
+
+
+
         int selectedBrandId;
         int selectedBrandIdDelete;
-       
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedValue == null || comboBox1.SelectedIndex == -1 || comboBox1.SelectedValue == DBNull.Value)
                 return;
-            MessageBox.Show(selectedBrandId.ToString());
+
             try
             {
                 selectedBrandId = Convert.ToInt32(comboBox1.SelectedValue);
@@ -117,7 +144,9 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                         }
                     }
                 }
+
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Hata: " + ex.Message, "Veri Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -167,11 +196,11 @@ namespace InkWatch.mainForms.newPrinter_SubForms
         {
             if (comboBox2.SelectedValue == null || comboBox2.SelectedIndex == -1 || comboBox2.SelectedValue == DBNull.Value)
                 return;
-           
+
             try
             {
                 selectedBrandIdDelete = Convert.ToInt32(comboBox2.SelectedValue);
-                
+
                 using (MySqlConnection conn = new MySqlConnection(connectionadress))
                 {
                     conn.Open();
@@ -247,6 +276,65 @@ namespace InkWatch.mainForms.newPrinter_SubForms
             {
                 MessageBox.Show("Hata: " + ex.Message, "Silme Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Farklı görsel seçme butonu
+            ofd.Title = "Resim Seç";
+            ofd.Filter = "Resim Dosyaları|*.jpg;*.jpeg;*.png;*.bmp";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                secilenDosyaYolu = ofd.FileName;
+                pictureBox3.Image = Image.FromFile(secilenDosyaYolu);
+                pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                string filePath = ofd.FileName;
+                imageBytes = File.ReadAllBytes(filePath);
+                pictureBox3.Image = Image.FromFile(secilenDosyaYolu);   
+            }
+           
+
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //kaydetme butonu   
+            
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                MessageBox.Show("Lütfen marka adını girin.");
+                return;
+            }
+            DialogResult question = MessageBox.Show(
+                "Marka ve logosunu güncellemek istediğinize emin misiniz?",
+                "Onay",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+            if (question == DialogResult.No)
+            {
+                return; // Kullanıcı "Hayır" seçerse işlemi iptal et
+            }
+            using (MySqlConnection conn = new MySqlConnection(connectionadress))
+            {
+                conn.Open();
+                string sql = "UPDATE tbl_brands SET brand_name = @brandName, brand_logo = @logo WHERE brand_id = @selectedID";
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@selectedID", selectedBrandId);
+                    cmd.Parameters.AddWithValue("@brandName", textBox2.Text.Trim());
+                    cmd.Parameters.Add("@logo", MySqlDbType.MediumBlob).Value = imageBytes;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show(
+                        "Marka ve logosu başarıyla eklendi.",
+                        "Başarılı",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+
+                }
+            }
+            brandadd();
         }
     }
 }

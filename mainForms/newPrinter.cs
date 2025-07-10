@@ -273,6 +273,16 @@ tbl_brands.brand_id = @BrandID;";
         private void button7_Click(object sender, EventArgs e)
         {
             selectedBrandId = (int)comboBox1.SelectedValue;
+            if(comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen bir marka seçiniz!", "Marka Seçimi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen bir model seçiniz!\nListede model gözükmüyorsa markaya model ekleyiniz.", "Model Seçimi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             selectedModelId = (int)comboBox2.SelectedValue;
             string newPrinterSerialNumber = textBox2.Text;
             int selectedDepartmantName = comboBox3.SelectedIndex + 1;
