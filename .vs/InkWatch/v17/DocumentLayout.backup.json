@@ -1,12 +1,86 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\!cetinsamet0Projects\\InkWatch\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addbrands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "newPrinter_AddBrands.cs",
+              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAmwMEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T11:49:05.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "newPrinter_AddBrands.cs [Tasar\u0131m]",
+              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs",
+              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs [Tasar\u0131m]",
+              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddBrands.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T11:49:02.94Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "newPrinter_AddModels.cs",
+              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
+              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
+              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
+              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAL0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T11:48:48.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "newPrinter_AddModels.cs [Tasar\u0131m]",
+              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
+              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
+              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs [Tasar\u0131m]",
+              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-10T10:27:04.783Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

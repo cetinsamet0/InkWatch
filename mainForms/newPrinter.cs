@@ -331,7 +331,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
         public Point location;
         private void button1_Click(object sender, EventArgs e)
         {
-            location = this.Location;
+           
 
             newPrinter_AddBrands addBrands = new newPrinter_AddBrands(_anaForm);
             addBrands.ShowDialog();
@@ -417,7 +417,6 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
 
         private void button2_Click(object sender, EventArgs e)
         {
-            location = this.Location;
             newPrinter_AddModels addModels = new newPrinter_AddModels(_anaForm);
             addModels.ShowDialog();
             

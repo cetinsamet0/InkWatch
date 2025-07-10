@@ -28,7 +28,7 @@ namespace InkWatch.mainForms.newPrinter_SubForms
 
         private void newPrinter_AddBrands_Load(object sender, EventArgs e)
         {
-            this.Location = _addBrand.location;
+          
             brandadd();
 
         }
@@ -191,6 +191,7 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                 MessageBox.Show("Program bir hatayla karşılaştı: " + ex.Message);
             }
         }
+
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
