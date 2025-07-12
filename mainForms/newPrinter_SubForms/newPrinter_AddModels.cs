@@ -154,12 +154,17 @@ namespace InkWatch.mainForms.newPrinter_SubForms
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            deletedmodeladd();
+
+        }
+        private void deletedmodeladd()
+        {
             if (comboBox2.SelectedValue == null || comboBox2.SelectedIndex == -1 || comboBox2.SelectedValue == DBNull.Value)
                 return;
             selectedBrandId2 = Convert.ToInt32(comboBox2.SelectedValue);
             using (MySqlConnection conn = new MySqlConnection(connectionadress))
             {
-                string modeladdquery = "SELECT model_id, model_name FROM tbl_models WHERE brand_id = @brandId";
+                string modeladdquery = "SELECT model_id, model_name, model_logo FROM tbl_models WHERE brand_id = @brandId";
                 using (MySqlCommand modeladdcommand = new MySqlCommand(modeladdquery, conn))
                 {
                     modeladdcommand.Parameters.AddWithValue("@brandId", selectedBrandId2);
@@ -188,11 +193,79 @@ namespace InkWatch.mainForms.newPrinter_SubForms
 
 
             }
+           
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox3.SelectedValue == null || comboBox3.SelectedIndex == -1 || comboBox3.SelectedValue == DBNull.Value)
+                return;
+            int selectedModelImageId = Convert.ToInt32(comboBox3.SelectedValue);
+            using (MySqlConnection conn = new MySqlConnection(connectionadress))
+            {
+                conn.Open();
+                string sql = "SELECT model_logo FROM tbl_models WHERE model_id = @modelId";
+                using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@modelId", selectedModelImageId);
 
+                    object result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        byte[] logoBytes = (byte[])result;
+                        using (MemoryStream ms = new MemoryStream(logoBytes))
+                        {
+                            pictureBox3.Image = Image.FromStream(ms);
+                            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                        }
+                    }
+                    else
+                    {
+                        pictureBox3.Image = Properties.Resources.no_image_logo; // Varsayılan logo resmi
+                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Temizleme butonu
+            using(MySqlConnection conn = new MySqlConnection(connectionadress))
+            {
+                string deletemodelquery = "DELETE FROM tbl_models WHERE model_id = @modelId";
+                conn.Open();
+                using(MySqlCommand cmd = new MySqlCommand(deletemodelquery, conn))
+                {
+                    if (comboBox3.SelectedValue == null || comboBox3.SelectedIndex == -1 || comboBox3.SelectedValue == DBNull.Value)
+                    {
+                        MessageBox.Show("Lütfen silinecek bir model seçiniz.");
+                        return;
+                    }
+                    int selectedModelId = Convert.ToInt32(comboBox3.SelectedValue);
+                    cmd.Parameters.AddWithValue("@modelId", selectedModelId);
+                    try
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Model başarıyla silindi.");
+                            deletedmodeladd(); // Model listesini güncelle
+                        }
+                        else
+                        {
+                            MessageBox.Show("Model silinemedi. Lütfen tekrar deneyin.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Bir hata oluştu: " + ex.Message);
+                    }
+                }
+            }
+            comboBox2.SelectedIndex = -1; // comboBox1'i temizle
+            comboBox3.SelectedIndex = -1; // comboBox2'yi temizle
+            pictureBox3.Image = Properties.Resources.no_image_logo; // Varsayılan resim
         }
     }
 }

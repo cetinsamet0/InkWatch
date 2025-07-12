@@ -87,8 +87,9 @@
             comboBox1.Location = new Point(101, 30);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(252, 23);
-            comboBox1.TabIndex = 1;
+            comboBox1.TabIndex = 0;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox1.Click += comboBox1_Click;
             // 
             // label1
             // 
@@ -115,7 +116,7 @@
             comboBox2.Location = new Point(101, 79);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(252, 23);
-            comboBox2.TabIndex = 2;
+            comboBox2.TabIndex = 1;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // label3
@@ -134,7 +135,7 @@
             comboBox3.Location = new Point(373, 30);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(239, 23);
-            comboBox3.TabIndex = 10;
+            comboBox3.TabIndex = 4;
             // 
             // textBox1
             // 
@@ -142,7 +143,7 @@
             textBox1.MaxLength = 12;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(239, 23);
-            textBox1.TabIndex = 12;
+            textBox1.TabIndex = 5;
             textBox1.KeyPress += textBox1_KeyPress;
             // 
             // label4
@@ -190,7 +191,7 @@
             dateTimePicker1.Margin = new Padding(0);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(239, 23);
-            dateTimePicker1.TabIndex = 17;
+            dateTimePicker1.TabIndex = 6;
             // 
             // label6
             // 
@@ -206,7 +207,7 @@
             button1.Location = new Point(772, 27);
             button1.Name = "button1";
             button1.Size = new Size(197, 34);
-            button1.TabIndex = 19;
+            button1.TabIndex = 9;
             button1.Text = "Marka İşlemleri";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -216,7 +217,7 @@
             button2.Location = new Point(772, 72);
             button2.Name = "button2";
             button2.Size = new Size(197, 34);
-            button2.TabIndex = 20;
+            button2.TabIndex = 9;
             button2.Text = "Model İşlemleri";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -226,7 +227,7 @@
             button3.Location = new Point(772, 118);
             button3.Name = "button3";
             button3.Size = new Size(197, 34);
-            button3.TabIndex = 21;
+            button3.TabIndex = 10;
             button3.Text = "Departman İşlemleri";
             button3.UseVisualStyleBackColor = true;
             // 
@@ -235,7 +236,7 @@
             button7.Location = new Point(627, 27);
             button7.Name = "button7";
             button7.Size = new Size(139, 54);
-            button7.TabIndex = 25;
+            button7.TabIndex = 7;
             button7.Text = "Yazıcıyı Ekle";
             button7.UseVisualStyleBackColor = true;
             button7.Click += button7_Click;
@@ -255,7 +256,7 @@
             button4.Location = new Point(627, 87);
             button4.Name = "button4";
             button4.Size = new Size(139, 65);
-            button4.TabIndex = 27;
+            button4.TabIndex = 8;
             button4.Text = "Seçili Yazıcıyı Sil";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
@@ -290,7 +291,6 @@
             ForeColor = SystemColors.ButtonHighlight;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "newPrinter";
-            ShowIcon = true;
             StartPosition = FormStartPosition.CenterParent;
             Text = "newPrinter";
             Load += newPrinter_Load;

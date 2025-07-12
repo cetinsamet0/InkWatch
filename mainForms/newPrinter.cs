@@ -27,7 +27,7 @@ namespace InkWatch.mainForms
             _anaForm.Show();
             this.Close();
             _anaForm.Location = this.Location;
-         
+
 
         }
 
@@ -273,7 +273,7 @@ tbl_brands.brand_id = @BrandID;";
         private void button7_Click(object sender, EventArgs e)
         {
             selectedBrandId = (int)comboBox1.SelectedValue;
-            if(comboBox1.SelectedIndex == -1)
+            if (comboBox1.SelectedIndex == -1)
             {
                 MessageBox.Show("Lütfen bir marka seçiniz!", "Marka Seçimi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -331,7 +331,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
         public Point location;
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
 
             newPrinter_AddBrands addBrands = new newPrinter_AddBrands(_anaForm);
             addBrands.ShowDialog();
@@ -390,7 +390,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
                 departman = rows[0]["Departman"].ToString();
                 marka = rows[0]["Yazıcı Markası"].ToString();
                 model = rows[0]["Yazıcı Modeli"].ToString();
-                seriNo = rows[0]["Seri Numarası"].ToString();  
+                seriNo = rows[0]["Seri Numarası"].ToString();
             }
             DialogResult result = MessageBox.Show("" + departman + " Departmanına ait yazıcıyı silmek istediğinize emin misiniz?" + Environment.NewLine + "Yazıcı: " + marka + " " + model + Environment.NewLine + "Seri Numarası: " + seriNo, "Yazıcı Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
@@ -419,7 +419,12 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
         {
             newPrinter_AddModels addModels = new newPrinter_AddModels(_anaForm);
             addModels.ShowDialog();
-            
+
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            brandadd();
         }
     }
 

@@ -72,7 +72,7 @@
             textBox1.Location = new Point(108, 114);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(241, 23);
-            textBox1.TabIndex = 3;
+            textBox1.TabIndex = 1;
             // 
             // pictureBox2
             // 
@@ -89,7 +89,7 @@
             button1.Location = new Point(109, 414);
             button1.Name = "button1";
             button1.Size = new Size(240, 41);
-            button1.TabIndex = 5;
+            button1.TabIndex = 2;
             button1.Text = "Marka Logosu Seç";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -110,7 +110,7 @@
             button2.Location = new Point(109, 461);
             button2.Name = "button2";
             button2.Size = new Size(240, 41);
-            button2.TabIndex = 7;
+            button2.TabIndex = 3;
             button2.Text = "Kaydet";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
@@ -119,25 +119,25 @@
             // 
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(689, 79);
+            comboBox1.Location = new Point(406, 56);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(315, 23);
-            comboBox1.TabIndex = 8;
+            comboBox1.TabIndex = 4;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(691, 137);
+            textBox2.Location = new Point(408, 114);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(315, 23);
-            textBox2.TabIndex = 9;
+            textBox2.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label2.ForeColor = Color.Snow;
-            label2.Location = new Point(688, 55);
+            label2.Location = new Point(405, 32);
             label2.Name = "label2";
             label2.Size = new Size(315, 21);
             label2.TabIndex = 10;
@@ -145,20 +145,20 @@
             // 
             // button3
             // 
-            button3.Location = new Point(692, 485);
+            button3.Location = new Point(409, 462);
             button3.Name = "button3";
             button3.Size = new Size(314, 42);
-            button3.TabIndex = 12;
+            button3.TabIndex = 7;
             button3.Text = "Değişiklikleri Kaydet";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(692, 437);
+            button4.Location = new Point(409, 414);
             button4.Name = "button4";
             button4.Size = new Size(314, 42);
-            button4.TabIndex = 11;
+            button4.TabIndex = 6;
             button4.Text = "Farklı Bir Logo Seç";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
@@ -166,7 +166,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.no_image_logo;
-            pictureBox3.Location = new Point(726, 178);
+            pictureBox3.Location = new Point(443, 155);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(240, 240);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -178,7 +178,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label3.ForeColor = Color.Snow;
-            label3.Location = new Point(688, 112);
+            label3.Location = new Point(405, 90);
             label3.Name = "label3";
             label3.Size = new Size(139, 21);
             label3.TabIndex = 14;
@@ -189,7 +189,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label4.ForeColor = Color.Snow;
-            label4.Location = new Point(382, 117);
+            label4.Location = new Point(774, 90);
             label4.Name = "label4";
             label4.Size = new Size(274, 21);
             label4.TabIndex = 16;
@@ -199,18 +199,19 @@
             // 
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(383, 141);
+            comboBox2.ItemHeight = 15;
+            comboBox2.Location = new Point(775, 114);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(273, 23);
-            comboBox2.TabIndex = 15;
+            comboBox2.TabIndex = 8;
             comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // button5
             // 
-            button5.Location = new Point(383, 441);
+            button5.Location = new Point(771, 413);
             button5.Name = "button5";
             button5.Size = new Size(273, 42);
-            button5.TabIndex = 17;
+            button5.TabIndex = 9;
             button5.Text = "Bu Markayı Sil";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
@@ -218,7 +219,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.no_image_logo;
-            pictureBox4.Location = new Point(393, 182);
+            pictureBox4.Location = new Point(785, 155);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(240, 240);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -230,7 +231,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(108, 11);
+            label5.Location = new Point(924, 11);
             label5.Name = "label5";
             label5.Size = new Size(168, 30);
             label5.TabIndex = 19;

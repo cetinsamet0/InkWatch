@@ -255,6 +255,17 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                             return;
                         }
                     }
+                    string checkmodelSql = "SELECT COUNT(*) FROM tbl_models WHERE brand_id = @brandId";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkmodelSql, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@brandId", selectedBrandIdDelete);
+                        int printerCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+                        if (printerCount > 0)
+                        {
+                            MessageBox.Show("İşleme devam edebilmek için öncelikle bu markaya ait modellerin silinmesi gerekmektedir.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
                     // Silme işlemi
                     string sql = "DELETE FROM tbl_brands WHERE brand_id = @brandId";
                     using (MySqlCommand cmd = new MySqlCommand(sql, conn))
@@ -265,6 +276,7 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                         {
                             MessageBox.Show("Marka başarıyla silindi.");
                             brandadd(); // Markaları yeniden yükle
+                            pictureBox4.Image = Properties.Resources.no_image_logo; // Varsayılan logo resmi
                         }
                         else
                         {
