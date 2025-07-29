@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using InkWatch.configs;
 using InkWatch.styling;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.X509.Store;
 
 namespace InkWatch.mainForms.newPrinter_SubForms
 {
@@ -35,6 +36,7 @@ namespace InkWatch.mainForms.newPrinter_SubForms
         {
             using (MySqlConnection conn = new MySqlConnection(connectionadress))
             {
+                comboBox1.Items.Clear();
                 conn.Open();
                 string addDepartmantQuery = "SELECT * FROM tbl_departmants";
                 using (MySqlCommand cmd = new MySqlCommand(addDepartmantQuery, conn))
@@ -54,6 +56,11 @@ namespace InkWatch.mainForms.newPrinter_SubForms
         string departmentName = "";
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBox1.Text == String.Empty)
+            {
+                MessageBox.Show("Lütfen departman adını giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             departmentName = textBox1.Text;
             using (MySqlConnection conn = new MySqlConnection(connectionadress))
             {
@@ -82,13 +89,54 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                         }
                     }
                 }
+                addDepartmantName();
             }
+
         }
 
+        //silme işlemimini departman idye göre yapmalı çünkü tbl_printers tablosunda departman adı değil idsi var sadece
         private void button2_Click(object sender, EventArgs e)
         {
             int selectedDeletedDepartmant = comboBox1.SelectedIndex;
-            MessageBox.Show("Seçilen Departman: " + comboBox1.SelectedItem.ToString(), "Departman Silme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (selectedDeletedDepartmant < 0 || comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz departmanı seçiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string selectedDepartmentName = comboBox1.SelectedItem.ToString();
+            DialogResult soru = MessageBox.Show("Seçilen Departman: " + selectedDepartmentName, "Departman Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (soru != DialogResult.Yes)
+            {
+                MessageBox.Show("Departman silme işlemi iptal edildi.", "İptal", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using (MySqlConnection conn = new MySqlConnection(connectionadress))
+            {
+                conn.Open();
+                string checkingquery = "SELECT COUNT(*) FROM tbl_printers WHERE departmant_id = @departmantName";
+                using (MySqlCommand command2 = new MySqlCommand(checkingquery, conn))
+                {
+                    command2.Parameters.AddWithValue("@departmantName", selectedDepartmentName);
+                    int count = Convert.ToInt32(command2.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Bu departmana ait yazıcılar var, ilk önce onları kaldırmalısınız!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+                string deleteDepartmant = "DELETE FROM tbl_departmants WHERE departmant_name = @departmantName";
+                using (MySqlCommand cmd = new MySqlCommand(deleteDepartmant, conn))
+                {
+                    cmd.Parameters.AddWithValue("@departmantName", selectedDepartmentName);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Departman başarıyla silindi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    comboBox1.Items.RemoveAt(selectedDeletedDepartmant);
+                }
+            }
         }
     }
 }
