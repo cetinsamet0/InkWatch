@@ -87,7 +87,7 @@ namespace InkWatch.mainForms.newPrinter_SubForms
             if (comboBox1.SelectedValue == null || comboBox1.SelectedIndex == -1 || comboBox1.SelectedValue == DBNull.Value)
                 return;
             selectedBrandId = Convert.ToInt32(comboBox1.SelectedValue);
-            MessageBox.Show("Seçilen Marka ID: " + selectedBrandId.ToString());
+           
 
 
         }

@@ -57,7 +57,7 @@
             textBox1.Location = new Point(114, 79);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(280, 23);
-            textBox1.TabIndex = 3;
+            textBox1.TabIndex = 0;
             // 
             // comboBox1
             // 
@@ -66,7 +66,7 @@
             comboBox1.Location = new Point(447, 79);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(284, 23);
-            comboBox1.TabIndex = 4;
+            comboBox1.TabIndex = 2;
             // 
             // label1
             // 
@@ -92,7 +92,7 @@
             button1.Location = new Point(114, 112);
             button1.Name = "button1";
             button1.Size = new Size(280, 39);
-            button1.TabIndex = 7;
+            button1.TabIndex = 1;
             button1.Text = "Departmanı Ekle";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
@@ -102,7 +102,7 @@
             button2.Location = new Point(447, 112);
             button2.Name = "button2";
             button2.Size = new Size(284, 39);
-            button2.TabIndex = 8;
+            button2.TabIndex = 3;
             button2.Text = "Departmanı Sil";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;

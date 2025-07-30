@@ -34,22 +34,33 @@ namespace InkWatch.mainForms.newPrinter_SubForms
         }
         private void addDepartmantName()
         {
-            using (MySqlConnection conn = new MySqlConnection(connectionadress))
+            comboBox1.DataSource = null; 
+            try
             {
-                comboBox1.Items.Clear();
-                conn.Open();
-                string addDepartmantQuery = "SELECT * FROM tbl_departmants";
-                using (MySqlCommand cmd = new MySqlCommand(addDepartmantQuery, conn))
+                
+                using (MySqlConnection con = new MySqlConnection(connectionadress))
                 {
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string departmantName = reader.GetString("departmant_name");
-                            comboBox1.Items.Add(departmantName);
-                        }
-                    }
+
+                    MySqlCommand addDepartmants = new MySqlCommand("SELECT * FROM tbl_departmants", con);
+                    con.Open();
+                    MySqlDataAdapter da = new MySqlDataAdapter(addDepartmants);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    //Lütfen bir departman seçiniz satırı ekleyen kod
+                    DataRow newRow = dt.NewRow();
+                    newRow["departmant_id"] = DBNull.Value;
+                    newRow["departmant_name"] = "Lütfen bir departman seçiniz";
+                    dt.Rows.InsertAt(newRow, 0); // İlk satıra ekle
+                    comboBox1.DataSource = dt;
+                    comboBox1.ValueMember = "departmant_id";
+                    comboBox1.DisplayMember = "departmant_name";
+
                 }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Departman isimleri eklenirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -94,17 +105,19 @@ namespace InkWatch.mainForms.newPrinter_SubForms
 
         }
 
-        //silme işlemimini departman idye göre yapmalı çünkü tbl_printers tablosunda departman adı değil idsi var sadece
+        
         private void button2_Click(object sender, EventArgs e)
         {
+
             int selectedDeletedDepartmant = comboBox1.SelectedIndex;
             if (selectedDeletedDepartmant < 0 || comboBox1.SelectedItem == null)
             {
                 MessageBox.Show("Lütfen silmek istediğiniz departmanı seçiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            string selectedDepartmentName = comboBox1.SelectedItem.ToString();
+            //silme işlemimini departman idye göre yapmalı çünkü tbl_printers tablosunda departman adı değil idsi var sadece
+            string selectedDepartmentName = comboBox1.Text.ToString();
+            int selectedDepartmentId = Convert.ToInt32(comboBox1.SelectedValue);
             DialogResult soru = MessageBox.Show("Seçilen Departman: " + selectedDepartmentName, "Departman Silme", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (soru != DialogResult.Yes)
@@ -116,10 +129,10 @@ namespace InkWatch.mainForms.newPrinter_SubForms
             using (MySqlConnection conn = new MySqlConnection(connectionadress))
             {
                 conn.Open();
-                string checkingquery = "SELECT COUNT(*) FROM tbl_printers WHERE departmant_id = @departmantName";
+                string checkingquery = "SELECT COUNT(*) FROM tbl_printers WHERE departmant_id = @departmantID";
                 using (MySqlCommand command2 = new MySqlCommand(checkingquery, conn))
                 {
-                    command2.Parameters.AddWithValue("@departmantName", selectedDepartmentName);
+                    command2.Parameters.AddWithValue("@departmantID", selectedDepartmentId);
                     int count = Convert.ToInt32(command2.ExecuteScalar());
                     if (count > 0)
                     {
@@ -128,15 +141,17 @@ namespace InkWatch.mainForms.newPrinter_SubForms
                     }
                 }
 
-                string deleteDepartmant = "DELETE FROM tbl_departmants WHERE departmant_name = @departmantName";
+                string deleteDepartmant = "DELETE FROM tbl_departmants WHERE departmant_id = @departmantID";
                 using (MySqlCommand cmd = new MySqlCommand(deleteDepartmant, conn))
                 {
-                    cmd.Parameters.AddWithValue("@departmantName", selectedDepartmentName);
+                    cmd.Parameters.AddWithValue("@departmantID", selectedDepartmentId);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Departman başarıyla silindi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    comboBox1.Items.RemoveAt(selectedDeletedDepartmant);
+                    comboBox1.DataSource = null;
+                    addDepartmantName();
                 }
             }
+            
         }
     }
 }

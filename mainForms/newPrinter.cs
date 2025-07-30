@@ -420,6 +420,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
             newPrinter_AddModels addModels = new newPrinter_AddModels(_anaForm);
             addModels.ShowDialog();
             location = this.Location;
+            modelsadd();
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
@@ -431,6 +432,7 @@ VALUES (@brandID, @modelID, @departmantID, @serialNumber , @ipAdress , @delivery
         {
             newPrinter_AddDepartmant addDepartmant = new newPrinter_AddDepartmant();
             addDepartmant.ShowDialog();
+            departmantsadd();
         }
     }
 
