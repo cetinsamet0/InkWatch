@@ -1,30 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\!cetinsamet0Projects\\InkWatch\\",
+  "WorkspaceRootPath": "C:\\Users\\PLATIT\\Desktop\\InkWatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|c:\\users\\platit\\desktop\\inkwatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|C:\\Users\\PLATIT\\Desktop\\InkWatch\\mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_addmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_addmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|d:\\!cetinsamet0projects\\inkwatch\\mainforms\\newprinter_subforms\\newprinter_adddepartmant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_adddepartmant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|D:\\!cetinsamet0Projects\\InkWatch\\mainforms\\newprinter_subforms\\newprinter_adddepartmant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter_subforms\\newprinter_adddepartmant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|c:\\users\\platit\\desktop\\inkwatch\\mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08DC0BD-5E3E-4F99-A70F-ED571B683428}|InkWatch.csproj|solutionrelative:mainforms\\newprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,15 +22,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "main.cs",
+              "DocumentMoniker": "C:\\Users\\PLATIT\\Desktop\\InkWatch\\mainForms\\main.cs",
+              "RelativeDocumentMoniker": "mainForms\\main.cs",
+              "ToolTip": "C:\\Users\\PLATIT\\Desktop\\InkWatch\\mainForms\\main.cs",
+              "RelativeToolTip": "mainForms\\main.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwDsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T09:59:05.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "newPrinter.cs",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter.cs",
+              "DocumentMoniker": "C:\\Users\\PLATIT\\Desktop\\InkWatch\\mainForms\\newPrinter.cs",
               "RelativeDocumentMoniker": "mainForms\\newPrinter.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter.cs",
+              "ToolTip": "C:\\Users\\PLATIT\\Desktop\\InkWatch\\mainForms\\newPrinter.cs",
               "RelativeToolTip": "mainForms\\newPrinter.cs",
               "ViewState": "AgIAAIsBAAAAAAAAAAASwJ0BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -52,62 +53,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "newPrinter.cs [Tasar\u0131m]",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter.cs [Tasar\u0131m]",
-              "RelativeToolTip": "mainForms\\newPrinter.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T07:38:06.009Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "main.cs [Tasar\u0131m]",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs",
+              "DocumentMoniker": "C:\\Users\\PLATIT\\Desktop\\InkWatch\\mainForms\\main.cs",
               "RelativeDocumentMoniker": "mainForms\\main.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\main.cs [Tasar\u0131m]",
+              "ToolTip": "C:\\Users\\PLATIT\\Desktop\\InkWatch\\mainForms\\main.cs [Tasar\u0131m]",
               "RelativeToolTip": "mainForms\\main.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T07:38:01.686Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "newPrinter_AddModels.cs [Tasar\u0131m]",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs [Tasar\u0131m]",
-              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddModels.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T07:34:43.774Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "newPrinter_AddDepartmant.cs",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs",
-              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAswJYAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T06:55:18.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "newPrinter_AddDepartmant.cs [Tasar\u0131m]",
-              "DocumentMoniker": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs",
-              "RelativeDocumentMoniker": "mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs",
-              "ToolTip": "D:\\!cetinsamet0Projects\\InkWatch\\mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs [Tasar\u0131m]",
-              "RelativeToolTip": "mainForms\\newPrinter_SubForms\\newPrinter_AddDepartmant.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T11:20:22.204Z",
               "EditorCaption": " [Tasar\u0131m]"
             }
           ]
